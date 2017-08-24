@@ -21,4 +21,6 @@
 
 蓄熱利用関係
 1. spec_thermal_storage.adoc  
-蓄熱利用のインターフェース仕様書
+蓄熱利用のインターフェース仕様書  
+1. calc_thermal_storage.md
+蓄熱利用の計算方法  
