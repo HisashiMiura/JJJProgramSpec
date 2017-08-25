@@ -19,8 +19,14 @@
 1. JJJUValueSimpleEvaluationMethod.ipynb  
 部位ごとのU値の計算方法と計算方法のテスト(別のテストファイルに分離していない)
 
-蓄熱利用関係
+「蓄熱の利用」関係
 1. spec_thermal_storage.adoc  
-蓄熱利用のインターフェース仕様書  
+「蓄熱の利用」のインターフェース仕様書  
 1. calc_thermal_storage.md
-蓄熱利用の計算方法  
+「蓄熱の利用」の計算方法  
+
+「自然風の利用・制御」関係
+1. spec_natural_ventilation.adoc  
+「自然風の利用・制御」のインターフェース仕様書  
+1. calc_natural_ventilation.md  
+「自然風の利用・制御」の計算方法
