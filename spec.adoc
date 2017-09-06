@@ -1,0 +1,76 @@
+= インタフェース仕様書
+{docdatetime}
+:doctype: article
+:toc: left
+:toc-title: 目次
+:pagenums:
+:sectnums:
+:figurenums:
+:figure-caption: 図
+:table-caption: 表
+:note-caption: メモ
+:warning-caption: 注意
+:appendix-caption: 付録
+:stem: asciimath
+
+include::spec_general.adoc[]
+
+<<<
+
+include::spec_natural_ventilation.adoc[]
+
+<<<
+
+include::spec_daiylight.adoc[]
+
+<<<
+
+include::spec_PV.adoc[]
+
+<<<
+
+include::spec_thermal_storage.adoc[]
+
+<<<
+
+include::spec_solar_heat_supply.adoc[]
+
+<<<
+
+include::spec_thermal_insulation.adoc[]
+
+<<<
+
+include::spec_solar_shade_and_gain.adoc[]
+
+<<<
+
+include::spec_heating_system.adoc[]
+
+<<<
+
+include::spec_cooling_system.adoc[]
+
+<<<
+
+include::spec_mechanical_ventilation.adoc[]
+
+<<<
+
+include::spec_DHW.adoc[]
+
+<<<
+
+include::spec_lighting.adoc[]
+
+<<<
+
+include::spec_appliances.adoc[]
+
+<<<
+
+include::spec_cogeneration.adoc[]
+
+<<<
+
+include::spec_water_and_kitchen_waste.adoc[]
