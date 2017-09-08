@@ -9,8 +9,15 @@
 基本情報
 
 説明::
+
+[JP]
 ====
 住宅の名称や床面積、地域の区分など、各要素技術に共通の情報を入力します。
+====
+
+[EN]
+====
+Input the general information that is common to all elemental technologies such as name and floor area of the house and the reigional revision. 
 ====
 
 === 環境条件
@@ -19,20 +26,28 @@
 === 入力
 
 [[GL_house_attribute]]
-==== 住宅の属性
+==== 住宅の属性 / Attribute of House
 
-===== a. 住宅の名称 [テキスト入力]
+===== a. 住宅の名称 / Name of House [テキスト入力]
 
 [[GL_room_composition]]
-==== 居室の構成
+==== 居室の構成 / Composition of Room
 
 説明::
 
+[JP]
 ====
 住宅の一次エネルギー消費量を計算するにあたって、各室を、 [underline]#主たる居室・その他の居室・非居室# の3つに分類します。
 ====
 
-[ポップアップ] 主たる居室・その他の居室・非居室::
+[EN]
+====
+Categorize each room into three types of the room as [underline]#"main habitable room", "other habitable room" and "non habitable room"# in order to calculate the primary energy consumption of the house.
+====
+
+[ポップアップ] 主たる居室・その他の居室・非居室 / main habitable room, other habitable room and non habitable room::
+
+[JP]
 ====
 主たる居室とは、居室のうち、基本生活行為において、就寝を除き日常生活上在室時間が長い居室のことです。居間（リビング）、食堂（ダイニング）及び台所（キッチン）などが該当します。 +
 その他の居室とは、主たる居室以外の居室をいいます。 +
@@ -43,41 +58,58 @@ image::images//General//shitsunobunruinorei.jpg[]
 図．室の分類の例
 ====
 
-===== a. 居室の構成 [選択入力]
+[EN]
+====
+Main habitable room is the room that the ocupants stay long time in daily life except for bedtime in basic daily activities among the rooms. 
+
+No image
+
+Fig. Example of Categorizing of ROoms
+====
+
+===== a. 居室の構成 / Composition of Room [選択入力]
 
 選択肢::
-* 主たる居室・その他の居室・非居室で構成される [規定値]
-* それ以外の構成
+* 主たる居室・その他の居室・非居室で構成される / The house is composed of main habitable room and other habitable rooms and non habitable rooms [規定値]
+* それ以外の構成 / Other composition
 
-===== b. その他の居室の有無 [選択入力]
+===== b. その他の居室の有無 / Existence of Other Habitable Rooms [選択入力]
 
 表示条件::
 「a. 居室の構成」=「それ以外の構成」
 
 選択肢::
-* あり [規定値]
-* なし
+* あり / Exist [規定値]
+* なし / Non Exist
 
-===== c. 非居室の有無 [選択入力]
+===== c. 非居室の有無 / Existence of Non Habitable Rooms [選択入力]
 
 表示条件::
 「a. 居室の構成」=「それ以外の構成」
 
 選択肢::
-* あり [規定値]
-* なし
+* あり / Exist [規定値]
+* なし / Non Exist
 
 [[GL_floor_area]]
-==== 床面積
+==== 床面積 / Floor Area
 
 説明::
 
+[JP]
 ====
-一次エネルギー消費量は床面積に大きく依存します。居室ごとに消費量を計算する用途もあることから、 [underline]#主たる居室・その他の居室# 、 床面積の「合計」（ [underline]#非居室# は入力値から自動計算されます）を入力します。 +
+一次エネルギー消費量は床面積に大きく依存します。居室ごとに消費量を計算する用途もあることから、 [underline]#主たる居室・その他の居室# の床面積、 床面積の「合計」（ [underline]#非居室# の床面積は入力値から自動計算されます）を入力します。 +
 [underline]#床面積の算出方法# は省エネルギー基準と同様のルールで算出してください。
 ====
 
-[ポップアップ] 主たる居室・その他の居室・非居室::
+[EN]
+====
+The primary energy consumption is largery dependent of the floor area. Because there are the usages that are calculated every habitable rooms, input the floor areas of [underline]#the main habitable room and the other habitable rooms# and the sum of the floor area (the floor area or [underline]#the non habitable rooms# is calculated automatically of the input. )
+====
+
+[ポップアップ] 主たる居室・その他の居室・非居室 / main habitable room, other habitable room and non habitable room::
+
+[JP]
 ====
 主たる居室とは、居室のうち、基本生活行為において、就寝を除き日常生活上在室時間が長い居室のことです。居間（リビング）、食堂（ダイニング）及び台所（キッチン）などが該当します。 +
 その他の居室とは、主たる居室以外の居室をいいます。 +
@@ -88,9 +120,20 @@ image::images//General//shitsunobunruinorei.jpg[]
 図．室の分類の例
 ====
 
-[ポップアップ] 床面積の算出方法::
+[EN]
 ====
-居室及び非居室の床面積の計算は、住戸の熱的境界の内側にある床面積のうち、間仕切りや扉等で区切られた居室及び非居室ごとに計算します。ただし、次表の場合はこの限りではありません。 +
+Main habitable room is the room that the ocupants stay long time in daily life except for bedtime in basic daily activities among the rooms. 
+
+No image
+
+Fig. Example of Categorizing of Rooms
+====
+
+[ポップアップ] 床面積の算出方法 / Calculation of Floor Areas::
+
+[JP]
+====
+居室及び非居室の床面積の計算は、住戸の熱的境界の内側にある床面積のうち、間仕切りや扉等で区切られた居室及び非居室ごとに行います。ただし、次表の場合はこの限りではありません。 +
 
 表 床面積算出の特例
 [cols="1,3"]
@@ -122,17 +165,63 @@ image::images//General//shitsunobunruinorei.jpg[]
 間仕切り壁や扉等がなく、水平方向及び垂直方向に空間的に連続する場合は、ひとつの室とみなして床面積を算出します。また、吹抜け等に面して開放された空間についても、当該吹抜け等が存する「主たる居室」、「その他の居室」又は「非居室」と一体であると判断し、床面積を算定することとします。なお、「主たる居室」と空間的に連続する「その他の居室」及び「非居室」は「主たる居室」に含めることとし、「その他の居室」と空間的に連続する「非居室」は「その他の居室」に含めることとして床面積を算出します。
 ====
 
-===== a. 床面積の合計 [数値入力]
+[EN]
+====
+Calculate the floor area of the habitable rooms and the  non habitabule rooms every rooms divided at partitions or doors in the floor space located inside of the thermal borders of the house. But, in the case of the next table, it is not this limit.
+
+Table. Exception of Floor Area Calculation
+[cols="1,3"]
+|====================
+| Wind Screen Rooms and Sunrooms |
+Not include the floor area of the wind screen room and sunrooms into the floor area. + 
+However, when assuming the wind screen room etc into the space inside thermal borders, the space can be included into the floor area.
+| Bay Windows | The floor area of the waist bay window where the prominance from the external wall surface is less than 
+500 mm and the height from the floor of the bottom end is more than 300 mm shall not be included into the total floor area.
+| Hut Back Storing and Floor Lower Storing | 
+Among the hut back storing and floor lower storing to exist inside of a thermal border, not include the floor area of the hut back storing and floor lower storing that can not be included into the total floor area defined under Building Construction Code.
+|　Store Rooms | Not count the floor area of store room, garade and so on where the the part(s)/partision(s) facing the habitable room(s) are insulated.  
+
+|====================
+
+
+1) Calculation of Floor Area of Main Habitable Room::
+
+It shall be the sum of the floor area in the living, dyning and kitchen. 
+In case that there are multiple livings, dynings, kitchens, the sum of the floor areas belong to main habitable room shall be the area as "main habitable room ".
+
+2) Calculation of Floor Area of Other Habitable Rooms ::
+This is the sum of the floor area of the habitable rooms except the "main habitable room" such as bedroom, Western and Japanese style room.
+
+3) Calculation of Floor Area of Non Habitable Rooms::
+This is the sum of the floor area such as toilet, washroom, corridor, entrance, storage room such as closet separated partition or door etc.  However, when storage room is attached to a habitable room, it can be regarded as part of the room to which it belongs, and it can be classified to the room.
+
+4) Calculation of Sum of Floor Areas::
+The sum of the floor areas is the sum of the floor area of the rooms "main habitable room", "other habitable rooms" and "non habitable rooms".
+
+5) Atrium Space::
+In the case of having an atrium space etc. in the house, consider that there is the virtual floor in the atrium space and calculate the floor area. Here, "atrium space etc." is an habitable room and a non habitable room with a height of the atrium space of 4.2 m or more, and "atrium space" means a space that is continuous in the vertical direction without flooring across the floor. The area of the virtual floor shall be added to the area of "main habitable room", "other habitable room" or "non habitable room" individually where the atrium space etc. exists. When the height of the ceiling is 4.2 m or more, it is assumed that there is a virtual floor at a height of 2.1 m, and the floor area of the virtual floor is added to the floor area of the habitable or non habitable room for the evaluation. When the height of the ceiling is 6.3 m or more, it is assumed that there is a virtual floor at the height of 2.1 m and 4.2 m, and the floor area of the virtual floor is added to the floor area of the habitable or non habitable room for the evaluation. In the same way, a virtual floor shall be set each time the ceiling height increases by 2.1 m.
+
+6) 一体的空間の扱いについて::
+間仕切り壁や扉等がなく、水平方向及び垂直方向に空間的に連続する場合は、ひとつの室とみなして床面積を算出します。また、吹抜け等に面して開放された空間についても、当該吹抜け等が存する「主たる居室」、「その他の居室」又は「非居室」と一体であると判断し、床面積を算定することとします。なお、「主たる居室」と空間的に連続する「その他の居室」及び「非居室」は「主たる居室」に含めることとし、「その他の居室」と空間的に連続する「非居室」は「その他の居室」に含めることとして床面積を算出します。
+
+If there are no partition walls, doors, etc. and they are spatially continuous in the horizontal direction and/or the vertical direction, the floor area of every space is calculated as one room. + 
+Also, the space opened facing the atrium space etc. shall be integrated with the "main habitable room", the "other habitable room" or the "non habitable room" where the atrium space etc. exists, and the floor area is to be calculated.
+"Other habitable room" and/or "non habitable room" spacially connected to the "main habitable room" are classified as "main habitable room".
+"Non habitable room" spacially connected to the "other habitable room" are classified as "Other habitable room".
+
+====
+
+===== a. 床面積の合計 / Sum of Floor Area [数値入力]
 
 入力規則::
 最小値=1.00, 最大値=5000.00, 小数点=2, 規定値=120.08, 単位=m^2^
 
-===== b. 主たる居室の床面積 [数値入力]
+===== b. 主たる居室の床面積 / Floor Area of Main Habitable Room [数値入力]
 
 入力規則::
 最小値=1.00, 最大値=5000.00, 小数点=2, 規定値=29.81, 単位=m^2^
 
-===== c. その他の居室の床面積 [数値入力]
+===== c. その他の居室の床面積 / Floor Area of Other Habitable ROoms [数値入力]
 
 表示条件::
 「<<GL_room_composition>>」「a. 居室の構成」=「主たる居室・その他の居室・非居室で構成される」または +
@@ -142,34 +231,48 @@ image::images//General//shitsunobunruinorei.jpg[]
 最小値=1.00, 最大値=5000.00, 小数点=2, 規定値=51.34, 単位=m^2^
 
 [[GL_ees_reasional_revision]]
-==== 省エネルギー基準における地域の区分 [選択入力]
+==== 省エネルギー基準における地域の区分 / Reasional Revision based on Energy Efficiency Standard  [選択入力]
 
 説明::
 
+[JP]
 ====
 [underline]#省エネルギー基準における地域の区分# とは、全国を市町村単位別に主に外気条件を評価軸として8つの地域に分けた区分のことで、1～8の地域の区分として表しています。それぞれの地域において気候条件の差が大きく、暖房、冷房、給湯などの一次エネルギー消費量の結果が大きく異なってしまうため、気候条件の差を小さくし、適切に省エネルギー性能を評価することを目的として8区分に細分化しました。
 ====
 
-[ポップアップ] 省エネルギー基準における地域の区分::
+[EN]
+====
+[underline]#Reasional revision based on energy efficiency standard# is the revision of nationawide divided into eight regions mainly 
+municipality unit with outside condition as the evaluation indices, and it is represented by 1 ~ 8 reasional revisions.
+Because the difference in climatic conditions is large in each region, the results of primary energy consumption such as heating, cooling, domestic hot water supply and the like are greatly different, so in order to reduce the difference in climatic conditions and appropriately evaluate energy conservation performance, it was divided into 8 revisions.
+====
+
+[ポップアップ] 省エネルギー基準における地域の区分 / Reasional revision based on energy efficiency standard::
+
 ====
 image::images//General//shouenerugikijunniyoruchiikinokubun.png[]
 図 省エネルギー基準における地域の区分
 ====
 
+====
+image::images//General//shouenerugikijunniyoruchiikinokubun.png[]
+Fig. Reasional revision based on energy efficiency standard
+====
+
 選択肢::
-* 1地域
-* 2地域
-* 3地域
-* 4地域
-* 5地域
-* 6地域
-* 7地域
-* 8地域
+* 1地域 / Region 1
+* 2地域 / Region 2
+* 3地域 / Region 3
+* 4地域 / Region 4
+* 5地域 / Region 5
+* 6地域 / Region 6
+* 7地域 / Region 7
+* 8地域 / Region 8
 
 [[GL_anual_solar_revision]]
-==== 年間日射量地域の区分
+==== 年間日射量地域の区分 / Anual Solar Revision
 
-===== a. 年間日射量地域区分の入力 [選択入力]
+===== a. 年間日射量地域区分の入力 / Input the annual solar revision [選択入力]
 
 説明::
 
@@ -189,7 +292,7 @@ image::images//General//nenkannissharyouchiikikubun.png[]
 * 指定しない [規定値]
 * 指定する
 
-===== b. 年間日射地域区分 [選択入力]
+===== b. 年間日射地域区分 / Anual Solar Revision [選択入力]
 
 表示条件::
 「a. 年間日射地域区分の入力」=「指定する」
@@ -202,7 +305,7 @@ image::images//General//nenkannissharyouchiikikubun.png[]
 * A5区分(年間の日射量が特に多い地域)
 
 [[GL_heating_season_solar_revision]]
-==== 暖房期日射量地域区分 [選択入力]
+==== 暖房期日射量地域区分 / Solar Revision for Heating Season [選択入力]
 
 説明::
 
@@ -226,7 +329,7 @@ image::images//General//danboukinissharyouchiikikubun.png[]
 * H5区分(暖房期の日射量が特に多い地域)
 
 [[GL_cooling_season_solar_revision]]
-==== 冷房期日射量地域区分 [選択入力]
+==== 冷房期日射量地域区分 / Solar Revision for Cooling Season [選択入力]
 
 説明::
 
@@ -250,7 +353,7 @@ No image
 * C5区分(冷房期の日射量が特に多い地域)
 
 [[GL_natural_ventilation_location]]
-==== 立地・気候条件(自然風の利用・制御)
+==== 立地・気候条件(自然風の利用・制御) / Location & Climatic Conditions (Use and Control of Wind)
 
 説明::
 
@@ -273,7 +376,7 @@ No image
 建設地の周辺がどの程度建て込んでいるかにより、通風利用の可能性は大きく変わります。郊外などの周辺が開けた立地では、建物に作用する風圧力の差（通風の駆動力）を確保しやすく、通風利用に有利となります。一方、都市内などの密集度の高い住宅地では、周辺建物の影響を受けて外部風速が低下して得られる風圧力差が小さくなるため自然風の利用が難しくなります。建物にどのように風圧力が作用するかは、一般に風圧係数により評価されます。本計算では、風圧係数の特性の違いから、立地条件（敷地周辺の建物密集度）を「立地1：都市型の立地（区域建蔽率が20%超）」と「立地2：郊外型の立地（区域建蔽率が20%以下）」の2つに区分して捉えることとしています。
 ====
 
-===== a. 外部風速 [選択入力]
+===== a. 外部風速 / External Wind Flow Rate [選択入力]
 
 説明::
 
