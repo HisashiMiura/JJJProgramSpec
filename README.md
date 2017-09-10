@@ -14,6 +14,8 @@
 
 ## 太陽光発電
 1. [インターフェース仕様書](spec_PV.adoc)
+1. 計算方法仕様書  
+[第9章 太陽光発電設備](CalculationSpec/09PV.adoc)
 
 ## 蓄熱の利用
 1. [インターフェース仕様書](spec_thermal_storage.adoc)
