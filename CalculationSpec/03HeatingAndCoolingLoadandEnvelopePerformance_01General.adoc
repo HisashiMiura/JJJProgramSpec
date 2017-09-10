@@ -1,0 +1,816 @@
+:stem: latexmath
+
+== 第三章 暖冷房負荷と外皮性能
+
+=== 第一節 全般
+
+==== 1. 適用範囲
+
+この計算は、用途が住宅である建築物又は建築物の部分における暖冷房負荷の計算に適用する。
+
+==== 2. 引用規格
+
+JIS B 8628 :2003 全熱交換器 +
+JRA 4056 :2006 全熱交換器有効換気量試験方法
+
+==== 3. 用語の定義
+
+第一章の定義を適用する。
+
+==== 4. 記号及び単位
+
+===== 4.1 記号
+
+本計算で用いる記号及び単位は表1による。
+
+[caption="表1 "]
+.記号及び単位
+[cols="^2,8,^1"]
+|====
+| 記号 ^| 意味 | 単位
+
+| latexmath:[A_A]
+| 床面積の合計
+| m^2^
+
+| latexmath:[A_{env}]
+| 当該住戸の外皮の部位の面積の合計
+| m^2^
+
+| latexmath:[A_{HCZ}]
+| 暖冷房区画の床面積
+| m^2^
+
+| latexmath:[A_{MR}]
+| 主たる居室の床面積
+| m^2^
+
+| latexmath:[A_{OR}]
+| その他の居室の床面積
+| m^2^
+
+| latexmath:[f_{R,Eqp}]
+| 暖房設備の方式による放射温度を考慮した負荷補正係数
+| －
+
+| latexmath:[f_{R,Evp}]
+| 外皮等の表面温度による放射温度を考慮した負荷補正係数
+| －
+
+| latexmath:[f_{TD}]
+| 上下温度分布を考慮した負荷補正係数
+| －
+
+| latexmath:[f_{TD,max}]
+| 上下温度分布を考慮した負荷補正係数の上限値
+| －
+
+| latexmath:[L_{CL}]
+| 冷房潜熱負荷
+| MJ/h
+
+| latexmath:[L_{CS}]
+| 冷房顕熱負荷
+| MJ/h
+
+| latexmath:[L_H]
+| 暖房負荷
+| MJ/h
+
+| latexmath:[L'_{CS}]
+| 負荷補正前の冷房顕熱負荷
+| MJ/h
+
+| latexmath:[L'_{CL}]
+| 負荷補正前の冷房潜熱負荷
+| MJ/h
+
+| latexmath:[L'_H]
+| 負荷補正前の暖房負荷
+| MJ/h
+
+| latexmath:[m_C]
+| 単位日射強度当たりの冷房期の日射熱取得量
+| W/(W/m^2^)
+
+| latexmath:[m_H]
+| 単位日射強度当たりの暖房期の日射熱取得量
+| W/(W/m^2^)
+
+| latexmath:[NV]
+| 通風の利用における相当換気回数
+| 1/h
+
+| latexmath:[q]
+| 単位温度差当たりの外皮熱損失量
+| W/K
+
+| latexmath:[Q]
+| 熱損失係数
+| W/m^2^K
+
+| latexmath:[Q_{HEXC}]
+| 熱交換型換気設備による暖房負荷低減を考慮した補正熱損失係数
+| W/m^2^K
+
+| latexmath:[R_l]
+| 温水床暖房又は電気ヒーター床暖房の敷設率
+| －
+
+| latexmath:[TS]
+| 蓄熱の利用の程度
+| －
+
+| latexmath:[U_A]
+| 外皮平均熱貫流率
+| W/m^2^K
+
+| latexmath:[\eta_{A,C}]
+| 冷房期の平均日射熱取得率
+| %
+
+| latexmath:[\eta_{A,H}]
+| 暖房期の平均日射熱取得率
+| %
+
+| latexmath:[\mu_C]
+| 冷房期の日射取得係数
+| －
+
+| latexmath:[\mu_H]
+| 暖房期の日射取得係数
+| －
+
+|====
+
+===== 4.2 添え字
+
+この計算で用いる添え字は表2による。
+
+[caption="表2 "]
+.添え字
+[cols="^2,9"]
+|====
+| 添え字 ^| 意味
+
+| latexmath:[d]
+| 日付
+
+| latexmath:[i]
+| 暖冷房区画
+
+| latexmath:[R]
+| 標準住戸
+
+| latexmath:[t]
+| 時刻
+
+|====
+
+==== 5. 暖冷房負荷の補正
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の１時間当たりの暖房負荷 latexmath:[L_{H,d,t,i}] は、式(1)により表される。
+
+latexmath:[
+\begin{equation}
+L_{H,d,t,i} = L'_{H,d,t,i} \times f_{R,Evp,i} \times f_{R,Eqp,i} \times f_{TD,i}
+\tag{1}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[L_{H,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の暖房負荷 (MJ/h)
+latexmath:[L'_{H,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の負荷補正前の暖房負荷 (MJ/h)
+latexmath:[f_{R,Evp,i}]:: :暖冷房区画 latexmath:[i] における外皮等の表面温度による放射温度を考慮した負荷補正係数
+latexmath:[f_{R,Eqp,i}]:: :暖冷房区画 latexmath:[i] における暖房設備の方式による放射温度を考慮した負荷補正係数
+latexmath:[f_{TD,i}]:: :暖冷房区画 latexmath:[i] における上下温度分布を考慮した負荷補正係数
+
+である。
+
+暖冷房区画 latexmath:[i] における外皮等の表面温度による放射温度を考慮した負荷補正係数 latexmath:[f_{R,Evp,i}] は、式(2)により表される。
+
+latexmath:[
+\begin{equation}
+f_{R,Evp,i} = \alpha_{R,Evp,i} \times Q + b_{R,Evp,i}
+\tag{2}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[Q]:: :熱損失係数 (W/m^2^K)
+
+であり、係数 latexmath:[\alpha_{R,Evp,i}] 及び latexmath:[b_{R,Evp,i}] は、表3により表される。熱損失係数 latexmath:[Q] は、「8. 熱損失係数の計算方法」において求めることとする。
+
+[caption="表3 "]
+.式(2)における係数 latexmath:[\alpha_{R,Evp,i}] 及び latexmath:[b_{R,Evp,i}]
+[cols="7"]
+|====
+.4+^| 地域の区分 6+^| 暖房方式及び運転方法の区分
+2+^| (い) 2+^| (ろ) 2+^| (は)
+2+^| 「住戸全体を連続的に暖房する方法」 2+^| 「居室のみを暖房する方式」かつ「連続運転」の場合 2+^| 「居室のみを暖房する方式」かつ「間歇運転」の場合
+^| latexmath:[\alpha_{R,Evp,i}] ^| latexmath:[b_{R,Evp,i}] ^| latexmath:[\alpha_{R,Evp,i}] ^| latexmath:[b_{R,Evp,i}] ^| latexmath:[\alpha_{R,Evp,i}] ^| latexmath:[b_{R,Evp,i}]
+
+^| 1 ^| latexmath:[0.031] ^| latexmath:[0.971] ^| latexmath:[0.041] ^| latexmath:[0.975] ^| latexmath:[0.059] ^| latexmath:[1.038]
+^| 2 ^| latexmath:[0.032] ^| latexmath:[0.966] ^| latexmath:[0.043] ^| latexmath:[0.970] ^| latexmath:[0.060] ^| latexmath:[1.034]
+^| 3 ^| latexmath:[0.030] ^| latexmath:[0.963] ^| latexmath:[0.039] ^| latexmath:[0.970] ^| latexmath:[0.050] ^| latexmath:[1.049]
+^| 4 ^| latexmath:[0.027] ^| latexmath:[0.972] ^| latexmath:[0.033] ^| latexmath:[0.985] ^| latexmath:[0.040] ^| latexmath:[1.081]
+^| 5 ^| latexmath:[0.028] ^| latexmath:[0.966] ^| latexmath:[0.034] ^| latexmath:[0.981] ^| latexmath:[0.038] ^| latexmath:[1.092]
+^| 6 ^| latexmath:[0.029] ^| latexmath:[0.961] ^| latexmath:[0.035] ^| latexmath:[0.974] ^| latexmath:[0.039] ^| latexmath:[1.090]
+^| 7 ^| latexmath:[0.020] ^| latexmath:[0.921] ^| latexmath:[0.024] ^| latexmath:[0.937] ^| latexmath:[0.021] ^| latexmath:[1.094]
+
+|====
+
+暖冷房区画 latexmath:[i] における暖房設備の方式による放射温度を考慮した負荷補正係数 latexmath:[f_{R,Eqp,i}] は、温水床暖房又は電気ヒーター床暖房を暖冷房区画 latexmath:[i] において採用する場合は、式(3)により表されるものとし、温水床暖房又は電気ヒーター床暖房を暖冷房区画 latexmath:[i] において採用しない場合は、 latexmath:[1.0] とする。
+
+latexmath:[
+\begin{equation}
+f_{R,Eqp,i} = \alpha_{R,Eqp,i} \times R_{l,i} + 1
+\tag{3}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[R_{l,i}]:: :暖冷房区画 latexmath:[i] に設置された温水床暖房又は電気ヒーター床暖房の敷設率
+
+であり、係数 latexmath:[\alpha_{R,Eqp,i}] は、表4により表される。
+
+[caption="表4 "]
+.式(3)における係数 latexmath:[\alpha_{R,Eqp,i}]
+[cols="3"]
+|====
+3+^| 暖房方式及び運転方法の区分
+^| (い) ^| (ろ) ^| (は)
+^| 「住戸全体を連続的に暖房する方法」 ^| 「居室のみを暖房する方式」かつ「連続運転」の場合 ^| 「居室のみを暖房する方式」かつ「間歇運転」の場合
+
+^| latexmath:[-0.105] ^| latexmath:[-0.137] ^| latexmath:[-0.231]
+
+|====
+
+暖冷房区画 latexmath:[i] における上下温度分布を考慮した負荷補正係数 latexmath:[f_{TD,i}] は、暖冷房区画 latexmath:[i] に温水床暖房又は電気ヒーター床暖房を採用する場合は latexmath:[1.0] とし、それ以外の場合は、式(4)により表される。
+
+latexmath:[
+\begin{equation}
+f_{TD,i} = \min(\alpha_{TD,i} \times Q^2 +1, f_{TD,max} )
+\tag{4}
+\end{equation}
+]
+
+係数 latexmath:[\alpha_{TD,i}] 及び上下温度分布を考慮した負荷補正係数の上限値 latexmath:[f_{TD,max}] は表5により表される。
+
+[caption="表5 "]
+.式(4)における係数 latexmath:[\alpha_{TD,i}]
+[cols="7"]
+|====
+.4+^| 地域の区分 6+^| 暖房方式及び運転方法の区分
+2+^| (い) 2+^| (ろ) 2+^| (は)
+2+^| 「住戸全体を連続的に暖房する方法」 2+^| 「居室のみを暖房する方式」かつ「連続運転」の場合 2+^| 「居室のみを暖房する方式」かつ「間歇運転」の場合
+^| latexmath:[\alpha_{TD,i}] ^| latexmath:[f_{TD,max}] ^| latexmath:[\alpha_{TD,i}] ^| latexmath:[f_{TD,max}] ^| latexmath:[\alpha_{TD,i}] ^| latexmath:[f_{TD,max}]
+
+^| 1 ^| latexmath:[0.0157] ^| latexmath:[1.0842] ^| latexmath:[0.0163] ^| latexmath:[1.0862] ^| latexmath:[0.0176] ^| latexmath:[1.0860]
+^| 2 ^| latexmath:[0.0157] ^| latexmath:[1.0928] ^| latexmath:[0.0163] ^| latexmath:[1.0954] ^| latexmath:[0.0176] ^| latexmath:[1.0981]
+^| 3 ^| latexmath:[0.0097] ^| latexmath:[1.1048] ^| latexmath:[0.0101] ^| latexmath:[1.1079] ^| latexmath:[0.0110] ^| latexmath:[1.1147]
+^| 4 ^| latexmath:[0.0063] ^| latexmath:[1.1111] ^| latexmath:[0.0066] ^| latexmath:[1.1146] ^| latexmath:[0.0072] ^| latexmath:[1.1235]
+^| 5 ^| latexmath:[0.0045] ^| latexmath:[1.1223] ^| latexmath:[0.0047] ^| latexmath:[1.1264] ^| latexmath:[0.0053] ^| latexmath:[1.1391]
+^| 6 ^| latexmath:[0.0045] ^| latexmath:[1.1277] ^| latexmath:[0.0047] ^| latexmath:[1.1320] ^| latexmath:[0.0053] ^| latexmath:[1.1465]
+^| 7 ^| latexmath:[0.0014] ^| latexmath:[1.1357] ^| latexmath:[0.0015] ^| latexmath:[1.1404] ^| latexmath:[0.0017] ^| latexmath:[1.1576]
+
+|====
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の1時間当たりの冷房顕熱負荷 latexmath:[L_{CS,d,t,i}] 及び冷房潜熱負荷 latexmath:[L_{CL,d,t,i}] は、式(5)により表される。
+
+latexmath:[
+\begin{equation}
+L_{CS,d,t,i} = L'_{CS,d,t,i}
+\tag{5a}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+L_{CL,d,t,i} = L'_{CL,d,t,i}
+\tag{5b}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[L_{CS,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の冷房顕熱負荷 (MJ/h)
+latexmath:[L_{CL,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の冷房潜熱負荷 (MJ/h)
+latexmath:[L'_{CS,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の負荷補正前の冷房顕熱負荷 (MJ/h)
+latexmath:[L'_{CL,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の負荷補正前の冷房潜熱負荷 (MJ/h)
+
+である。
+
+==== 6. 負荷補正前の暖冷房負荷
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の負荷補正前の暖房負荷 latexmath:[L'_{H,d,t,i}] 、日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の負荷補正前の冷房顕熱負荷 latexmath:[L'_{CS,d,t,i}] 及び日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の負荷補正前の冷房潜熱負荷 latexmath:[L'_{CL,d,t,i}] は、式(6)により表される。
+
+latexmath:[
+\begin{equation}
+L'_{H,d,t,i} = L'_{H,R,d,t,i} \times \frac{A_{HCZ,i}}{A_{HCZ,R,i}}
+\tag{6a}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+L'_{CS,d,t,i} = L'_{CS,R,d,t,i} \times \frac{A_{HCZ,i}}{A_{HCZ,R,i}}
+\tag{6b}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+L'_{CL,d,t,i} = L'_{CL,R,d,t,i} \times \frac{A_{HCZ,i}}{A_{HCZ,R,i}}
+\tag{6c}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[L'_{H,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の負荷補正前の暖房負荷 (MJ/h)
+latexmath:[L'_{CS,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の負荷補正前の冷房顕熱負荷 (MJ/h)
+latexmath:[L'_{CL,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の負荷補正前の冷房潜熱負荷 (MJ/h)
+latexmath:[A_{HCZ,i}]:: :暖冷房区画 latexmath:[i] の床面積 (m^2^)
+latexmath:[A_{HCZ,R,i}]:: :標準住戸の暖冷房区画 latexmath:[i] の床面積 (m^2^)
+
+である。
+
+==== 7. 標準住戸の負荷補正前の暖冷房負荷
+
+===== 7.1 標準住戸の負荷補正前の暖房負荷
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の負荷補正前の暖房負荷 latexmath:[L'_{H,R,d,t,i}] は、式(7)により表される。
+
+latexmath:[
+\begin{equation}
+L'_{H,R,d,t,i} = { ( 1 - r_{TS} ) \times L'_{H,R,TS_0,d,t,i} + r_{TS} \times L'_{H,R,TS_1,d,t,i} } - \Delta L'_{H,uf,R,d,t,i}
+\tag{7}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[L'_{H,R,TS_l,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の蓄熱の利用の程度 latexmath:[TS_l] の標準住戸の負荷補正前の暖房負荷 (MJ/h)
+latexmath:[r_{TS}]:: :蓄熱の利用の程度を表す係数
+latexmath:[\Delta L'_{H,uf,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の床下空間を経由して外気を導入する換気方式による暖房負荷削減量 (MJ/h) (ただし、式(7)第1項が0未満の場合は0とする。)
+
+である。
+
+蓄熱の利用の程度 latexmath:[TS_l] における蓄熱の利用の程度の区分 latexmath:[l] において、蓄熱の利用なしの場合は latexmath:[l=0] とし、蓄熱の利用ありの場合は latexmath:[l=1] とする。蓄熱の利用の有無は、通常、蓄熱の利用なしとするが、付録Bに規定される蓄熱の利用がある場合の要件を満たす場合は、蓄熱の利用ありとしてよい。
+
+蓄熱の利用の程度を表す係数 latexmath:[r_{TS}] は、 latexmath:[L'_{H,R,TS_0,d,t,i} \le L'_{H,R,TS_1,d,t,i}] の場合は latexmath:[0.0] とし、 latexmath:[L'_{H,R,TS_0,d,t,i} > L'_{H,R,TS_1,d,t,i}] の場合は、表6に定める値とする。
+
+[caption="表6 "]
+.蓄熱の利用の程度を表す係数 latexmath:[r_{TS}]
+[cols="6"]
+|====
+.2+^| 地域の区分 5+^| 暖房期の日射地域区分
+^| H1 ^| H2 ^| H3 ^| H4 ^| H5
+
+^| 1 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
+^| 2 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
+^| 3 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
+^| 4 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
+^| 5 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
+^| 6 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
+^| 7 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
+
+|====
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の蓄熱の利用の程度 latexmath:[TS_l] の標準住戸の負荷補正前の暖房負荷 latexmath:[L'_{H,R,TS_l,d,t,i}] は、式(8)により表される。
+
+1～7地域の場合
+
+latexmath:[
+\begin{equation}
+L'_{H,R,TS_l,d,t,i} = \begin{cases}
+  \frac{ Q_{HEX} - Q_2 }{ Q_1 - Q_2 } \times L'_{H,R,TS_l,Q_1,d,t,i} + \frac{ Q_{HEX} - Q_1 }{ Q_2 - Q_1 } \times L'_{H,R,TS_l,Q_2,d,t,i} & (Q \ge Q_2 の場合)) \\
+  \frac{ Q_{HEX} - Q_3 }{ Q_2 - Q_3 } \times L'_{H,R,TS_l,Q_2,d,t,i} + \frac{ Q_{HEX} - Q_2 }{ Q_3 - Q_2 } \times L'_{H,R,TS_l,Q_3,d,t,i} & (Q_2 > Q \ge Q_2 の場合)) \\
+  \frac{ Q_{HEX} - Q_4 }{ Q_3 - Q_4 } \times L'_{H,R,TS_l,Q_3,d,t,i} + \frac{ Q_{HEX} - Q_3 }{ Q_4 - Q_3 } \times L'_{H,R,TS_l,Q_4,d,t,i} & (Q_3 > Q の場合)) \\
+\end{cases}
+\tag{8a}
+\end{equation}
+]
+
+8地域の場合
+
+latexmath:[
+\begin{equation}
+L'_{H,R,TS_l,d,t,i} = \begin{cases}
+  \frac{ Q_{HEX} - Q_2 }{ Q_1 - Q_2 } \times L'_{H,R,TS_l,Q_1,d,t,i} + \frac{ Q_{HEX} - Q_1 }{ Q_2 - Q_1 } \times L'_{H,R,TS_l,Q_2,d,t,i} & (Q \ge Q_2 の場合)) \\
+  \frac{ Q_{HEX} - Q_3 }{ Q_2 - Q_3 } \times L'_{H,R,TS_l,Q_2,d,t,i} + \frac{ Q_{HEX} - Q_2 }{ Q_3 - Q_2 } \times L'_{H,R,TS_l,Q_3,d,t,i} & (Q_2 > Q の場合)) \\
+\end{cases}
+\tag{8b}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[Q_{HEXC}]:: :熱交換型換気設備による暖房負荷低減を考慮した補正熱損失係数 (W/m^2^K)
+latexmath:[L'_{H,R,TS_l,Q_j,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の蓄熱の利用の程度 latexmath:[TS_l] の熱損失係数 latexmath:[Q_j] の標準住戸の負荷補正前の暖房負荷 (MJ/h)
+latexmath:[Q_j]:: :断熱性能の区分 latexmath:[j] の熱損失係数 (W/(m^2^K))
+
+である。
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の蓄熱の利用の程度 latexmath:[TS_l] の熱損失係数 latexmath:[Q_j] の標準住戸の負荷補正前の暖房負荷 latexmath:[L'_{H,R,TS_l,Q_j,d,t,i}] は、式(9)により表される。
+
+latexmath:[
+\begin{equation}
+\begin{split}
+& L'_{H,R,TS_l,Q_j,d,t,i} \\
+ & = \begin{cases}
+  \frac{ \mu_H - \mu_{H,j,2} }{ \mu_{H,j,1} - \mu_{H,j,2} } \times L'_{H,R,TS_l,Q_j,\mu_{H,j,1},d,t,i} + \frac{ \mu_H - \mu_{H,j,1} }{ \mu_{H,j,2} - \mu_{H,j,1} } \times L'_{H,R,TS_l,Q_j,\mu_{H,j,2},d,t,i} & (\mu_H < \mu_{H,j,2} の場合)) \\
+  \frac{ \mu_H - \mu_{H,j,3} }{ \mu_{H,j,2} - \mu_{H,j,3} } \times L'_{H,R,TS_l,Q_j,\mu_{H,j,2},d,t,i} + \frac{ \mu_H - \mu_{H,j,2} }{ \mu_{H,j,3} - \mu_{H,j,2} } \times L'_{H,R,TS_l,Q_j,\mu_{H,j,3},d,t,i} & (\mu_{H,j,2} \le \mu_H の場合)) \\
+ \end{cases}
+\end{split}
+\tag{9}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[L'_{H,R,TS_l,Q_j,\mu_{H,j,k},d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の蓄熱の利用の程度 latexmath:[TS_l] の熱損失係数 latexmath:[Q_j] かつ暖房期の日射取得係数 latexmath:[\mu_{H,j,k}] の標準住戸の負荷補正前の暖房負荷 (MJ/h)
+latexmath:[\mu_H]:: :暖房期の日射取得係数
+latexmath:[\mu_{H,j,k}]:: 断熱性能の区分 latexmath:[j] における日射取得性能の区分 latexmath:[k] の暖房期の日射取得係数
+
+である。暖房期の日射取得係数は、「9.1暖房期の日射取得係数」より求める。
+
+断熱性能の区分 latexmath:[j] の熱損失係数 latexmath:[Q_j] ( latexmath:[j=1 \sim 4] )は地域の区分に応じて表7により表される。
+
+断熱性能の区分 latexmath:[j] における日射取得性能の区分 latexmath:[k] の暖房期の日射取得係数 latexmath:[\mu_{H,j,k}] は、地域の区分及び断熱性能の区分 latexmath:[j] の熱損失係数 latexmath:[Q_j] の区分番号に応じて表8により表される。
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の蓄熱の利用の程度 latexmath:[TS_l] の熱損失係数 latexmath:[Q_j] かつ暖房期の日射取得係数 latexmath:[\mu_{H,j,k}] の標準住戸の負荷補正前の暖房負荷 latexmath:[L'_{H,R,TS_l,Q_j,\mu_{H,j,k},d,t,i}] は、断熱性能の区分 latexmath:[j] 、日射取得性能の区分 latexmath:[k] 、蓄熱の利用の有無、暖房方式及び運転方法に応じて、データ「暖冷房負荷表」により表される。
+
+暖房方式は、「住戸全体を連続的に暖房する方式」と「居室のみを暖房する方式」に分けられ、さらに「居室のみを暖房する方式」の場合は「連続運転」と「間歇運転」に分類される。これらは設置する暖房設備機器又は放熱器の種類によって決まり、その決定方法は第四章「暖冷房設備」第一節「全般」の付録Aにおいて規定されている。
+
+[caption="表7 "]
+.断熱性能の区分 latexmath:[j] の熱損失係数 latexmath:[Q_j]
+[cols="10"]
+|====
+2.2+| 8+^| 地域の区分
+^| 1 ^| 2 ^| 3 ^| 4 ^| 5 ^| 6 ^| 7 ^| 8
+.4+^.^|断熱性能の区分 latexmath:[j]
+^| 1 ^| latexmath:[2.8] ^| latexmath:[2.8] ^| latexmath:[4.0] ^| latexmath:[4.7] ^| latexmath:[5.19] ^| latexmath:[5.19] ^| latexmath:[8.27] ^| latexmath:[8.27]
+^| 2 ^| latexmath:[1.8] ^| latexmath:[1.8] ^| latexmath:[2.7] ^| latexmath:[3.3] ^| latexmath:[4.2] ^| latexmath:[4.2] ^| latexmath:[4.59] ^| latexmath:[8.01]
+^| 3 ^| latexmath:[1.6] ^| latexmath:[1.6] ^| latexmath:[1.9] ^| latexmath:[2.4] ^| latexmath:[2.7] ^| latexmath:[2.7] ^| latexmath:[2.7] ^| latexmath:[3.7]
+^| 4 ^| latexmath:[1.4] ^| latexmath:[1.4] ^| latexmath:[1.4] ^| latexmath:[1.9] ^| latexmath:[1.9] ^| latexmath:[1.9] ^| latexmath:[1.9] ^| latexmath:[3.7]
+
+|====
+
+[caption="表8"]
+.断熱性能の区分 latexmath:[j] における日射取得性能の区分 latexmath:[k] の暖房期の日射取得係数 latexmath:[\mu_{H,j,k}]  及び冷房期の日射取得係数 latexmath:[\mu_{C,j,k}]
+[cols="10"]
+|====
+.2+^| 断熱性能の区分 latexmath:[j] .2+^| 日射取得性能の区分 latexmath:[k] 8+^| 地域の区分
+^| 1 ^| 2 ^| 3 ^| 4 ^| 5 ^| 6 ^| 7 ^| 8
+.2+^| 1 .2+^| 1 ^| 0.029 ^| 0.027 ^| 0.044 ^| 0.048 ^| 0.062 ^| 0.061 ^| 0.129 ^| －
+^| 0.021 ^| 0.022 ^| 0.036 ^| 0.039 ^| 0.050 ^| 0.048 ^| 0.106 ^| 0.110
+.2+^| 1 .2+^| 2 ^| 0.079 ^| 0.074 ^| 0.091 ^| 0.112 ^| 0.138 ^| 0.134 ^| 0.206 ^| −
+^| 0.052 ^| 0.052 ^| 0.065 ^| 0.080 ^| 0.095 ^| 0.090 ^| 0.146 ^| 0.154
+.2+^| 1 .2+^| 3 ^| 0.115 ^| 0.106 ^| 0.123 ^| 0.161 ^| 0.197 ^| 0.191 ^| 0.268 ^| －
+^| 0.071 ^| 0.071 ^| 0.083 ^| 0.107 ^| 0.124 ^| 0.117 ^| 0.172 ^| 0.184
+.2+^| 2 .2+^| 1 ^| 0.029 ^| 0.027 ^| 0.040 ^| 0.046 ^| 0.057 ^| 0.056 ^| 0.063 ^| －
+^| 0.021 ^| 0.022 ^| 0.032 ^| 0.037 ^| 0.044 ^| 0.043 ^| 0.046 ^| 0.129
+.2+^| 2 .2+^| 2 ^| 0.075 ^| 0.070 ^| 0.087 ^| 0.102 ^| 0.132 ^| 0.128 ^| 0.140 ^| －
+^| 0.049 ^| 0.049 ^| 0.061 ^| 0.072 ^| 0.089 ^| 0.085 ^| 0.086 ^| 0.174
+.2+^| 2 .2+^| 3 ^| 0.109 ^| 0.101 ^| 0.119 ^| 0.142 ^| 0.191 ^| 0.185 ^| 0.202 ^| －
+^| 0.068 ^| 0.068 ^| 0.079 ^| 0.094 ^| 0.119 ^| 0.112 ^| 0.111 ^| 0.204
+.2+^| 3 .2+^| 1 ^| 0.025 ^| 0.024 ^| 0.030 ^| 0.033 ^| 0.038 ^| 0.037 ^| 0.038 ^| －
+^| 0.019 ^| 0.019 ^| 0.023 ^| 0.026 ^| 0.027 ^| 0.026 ^| 0.025 ^| 0.023
+.2+^| 3 .2+^| 2 ^| 0.071 ^| 0.066 ^| 0.072 ^| 0.090 ^| 0.104 ^| 0.101 ^| 0.107 ^| －
+^| 0.046 ^| 0.046 ^| 0.049 ^| 0.061 ^| 0.066 ^| 0.062 ^| 0.059 ^| 0.068
+.2+^| 3 .2+^| 3 ^| 0.106 ^| 0.098 ^| 0.104 ^| 0.130 ^| 0.153 ^| 0.148 ^| 0.158 ^| －
+^| 0.065 ^| 0.065 ^| 0.067 ^| 0.082 ^| 0.090 ^| 0.084 ^| 0.080 ^| 0.098
+.2+^| 4 .2+^| 1 ^| 0.024 ^| 0.022 ^| 0.022 ^| 0.026 ^| 0.030 ^| 0.029 ^| 0.030 ^| －
+^| 0.017 ^| 0.017 ^| 0.017 ^| 0.019 ^| 0.021 ^| 0.020 ^| 0.019 ^| 0.019
+.2+^| 4 .2+^| 2 ^| 0.070 ^| 0.065 ^| 0.065 ^| 0.078 ^| 0.090 ^| 0.087 ^| 0.092 ^| －
+^| 0.045 ^| 0.045 ^| 0.043 ^| 0.052 ^| 0.056 ^| 0.053 ^| 0.050 ^| 0.050
+.2+^| 4 .2+^| 3 ^| 0.104 ^| 0.096 ^| 0.096 ^| 0.116 ^| 0.137 ^| 0.132 ^| 0.141 ^| －
+^| 0.063 ^| 0.063 ^| 0.060 ^| 0.072 ^| 0.078 ^| 0.073 ^| 0.070 ^| 0.065
+10+| (上段：暖房期の日射取得係数 latexmath:[\mu_{H,j,k}] / 下段：冷房期の日射取得係数 latexmath:[\mu_{C,j,k}] )
+
+|====
+
+===== 7.2 標準住戸の負荷補正前の冷房負荷
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の負荷補正前の冷房顕熱負荷 latexmath:[L'_{CS,R,d,t,i}] 及び日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の負荷補正前の冷房潜熱負荷 latexmath:[L'_{CL,R,d,t,i}] は、式(10)により表される。
+
+latexmath:[
+\begin{equation}
+\begin{split}
+& L'_{CS,R,d,t,i} \\
+ & = \begin{cases}
+  ( \frac{ NV - NV_2 }{ NV_1 - NV_2 } \times L'_{CS,R,NV_1,d,t,i} + \frac{ NV - NV_1 }{ NV_2 - NV_1 } \times L'_{CS,R,NV_2,d,t,i} ) - \Delta L'_{CS,uf,R,d,t,i} & (NV < NV_2 の場合) \\
+  ( \frac{ NV - NV_3 }{ NV_2 - NV_3 } \times L'_{CS,R,NV_2,d,t,i} + \frac{ NV - NV_2 }{ NV_3 - NV_2 } \times L'_{CS,R,NV_3,d,t,i} ) - \Delta L'_{CS,uf,R,d,t,i} & (NV_2 \le NV の場合) \\
+ \end{cases}
+\end{split}
+\tag{10a}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+L'_{CL,R,d,t,i} = \begin{cases}
+  ( \frac{ NV - NV_2 }{ NV_1 - NV_2 } \times L'_{CL,R,NV_1,d,t,i} + \frac{ NV - NV_1 }{ NV_2 - NV_1 } \times L'_{CL,R,NV_2,d,t,i} ) & (NV < NV_2 の場合) \\
+  ( \frac{ NV - NV_3 }{ NV_2 - NV_3 } \times L'_{CL,R,NV_2,d,t,i} + \frac{ NV - NV_2 }{ NV_3 - NV_2 } \times L'_{CL,R,NV_3,d,t,i} ) & (NV_2 \le NV の場合) \\
+ \end{cases}
+\tag{10b}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[NV]:: :通風の利用における相当換気回数 (1/h)
+latexmath:[NV_l]:: :通風の利用に関する区分 latexmath:[l] の通風の利用における相当換気回数 (1/h)
+latexmath:[L'_{CS,R,NV_l,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の標準住戸の負荷補正前の冷房顕熱負荷 (MJ/h)
+latexmath:[L'_{CL,R,NV_l,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_L] の標準住戸の負荷補正前の冷房潜熱負荷 (MJ/h)
+latexmath:[\Delta L'_{CS,uf,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の標準住戸の床下空間を経由して外気を導入する換気方式による冷房顕熱負荷削減量 (MJ/h) (ただし、式(10a)第1項が0未満の場合は0とする。)
+
+である。
+
+通風の利用における相当換気回数 latexmath:[NV] は、「住戸全体を連続的に冷房する方式」の場合はすべての暖冷房区画( latexmath:[i=1 \sim 12] )において latexmath:[0.0] 回/hとする。
+
+ifdef::ess[]
+
+「居室のみを冷房する方式」の場合は「主たる居室」(暖冷房区画の番号 latexmath:[i=1] )と「その他の居室」(暖冷房区画の番号 latexmath:[i= 2 \sim 5 ] )ごとに、通風の利用の違い(「通風を利用しない」「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」「通風を利用する(換気回数 latexmath:[20] 回/h相当以上)」)により付録Cに従って定める。
+
+endif::ess[]
+
+ifdef::JJJ[]
+
+「居室のみを冷房する方式」の場合は「主たる居室」(暖冷房区画の番号 latexmath:[i=1] )と「その他の居室」(暖冷房区画の番号 latexmath:[i= 2 \sim 5 ] )ごとに、相当換気回数 latexmath:[NV] を直接入力するか、又は、立地・外部風速・採用する手法(手法1～手法3)に応じて、表i によって定まる値を適用する。自然風の利用をしない場合は、相当換気回数は latexmath:[0]  回/hである。
+
+相当換気回数は直接入力する場合の、相当換気回数の求め方は付録Cによる。
+
+[caption="表i "]
+.立地や手法等に応じた相当換気回数
+[cols="5*^"]
+|====
+| 立地 | 外部風速 | 手法1 又は 手法3 (※1) | 手法2 | 換気回数
+| 立地1 | 1m/s以下 | 採用しない | － | 0
+| 立地1 | 1m/s以下 | 手法1a/3a | － | 2
+| 立地1 | 1m/s以下 | 手法1b/3b | － | 3
+| 立地1 | 1~2m/s | 採用しない | － | 0
+| 立地1 | 1~2m/s | 手法1a/3a | － | 5
+| 立地1 | 1~2m/s | 手法1b/3b | － | 10
+| 立地1 | 2m/s以上 | 採用しない | － | 0
+| 立地1 | 2m/s以上 | 手法1a/3a | － | 8
+| 立地1 | 2m/s以上 | 手法1b/3b | － | 17
+| 立地2 | 1m/s以下 | 採用しない | 採用しない | 0
+| 立地2 | 1m/s以下 | 採用しない | 採用する | 0
+| 立地2 | 1m/s以下 | 手法1a/3a | 採用しない | 3
+| 立地2 | 1m/s以下 | 手法1a/3a | 採用する | 5
+| 立地2	| 1m/s以下 | 手法1b/3b | 採用しない | 7
+| 立地2	| 1m/s以下 | 手法1b/3b | 採用する | 10
+| 立地2	| 1~2m/s | 採用しない | 採用しない | 0
+| 立地2	| 1~2m/s | 採用しない | 採用する | 0
+| 立地2	| 1~2m/s | 手法1a/3a | 採用しない | 10
+| 立地2	| 1~2m/s | 手法1a/3a | 採用する | 15
+| 立地2	| 1~2m/s | 手法1b/3b | 採用しない | 20
+| 立地2	| 1~2m/s | 手法1b/3b | 採用する | 30
+| 立地2	| 2m/s以上 | 採用しない | 採用しない | 0
+| 立地2	| 2m/s以上 | 採用しない | 採用する | 0
+| 立地2	| 2m/s以上 | 手法1a/3a | 採用しない | 17
+| 立地2	| 2m/s以上 | 手法1a/3a | 採用する | 25
+| 立地2	| 2m/s以上 | 手法1b/3b | 採用しない | 33
+| 立地2	| 2m/s以上 | 手法1b/3b | 採用する | 50
+5+<|
+※1　手法1と手法3は排他の関係にある。
+
+※2　立地1の場合、手法2の効果は無い（従って、手法2の採用の有無は問わない。）
+
+<参考>
+
+手法1: 通風経路上の開口部面積の確保 (1a 開口面積小の組み合わせ 1b 開口面積大の組み合わせ)
+
+手法2: 卓越風向に応じた開口部配置
+
+手法3: 高窓の利用 (3a 開口面積小の組み合わせ 3b 開口面積大の組み合わせ)
+
+|====
+
+endif::JJJ[]
+
+ifdef::ees[]
+
+主たる居室において通風の利用が「通風を利用しない」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[0.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[5.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[20] 回/h相当以上) 」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[20.0] 回/hとする。
+
+その他の居室において通風の利用が「通風を利用しない」に該当する場合は暖冷房区画 latexmath:[i=2 \sim 5] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[0.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」に該当する場合は暖冷房区画 latexmath:[i=2 \sim 5] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[5.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[20] 回/h相当以上)」に該当する場合は暖冷房区画 latexmath:[i=2 \sim 5] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[20.0] 回/hとする。
+
+endif::ees[]
+
+通風の利用に関する区分 latexmath:[l] の通風の利用における相当換気回数 latexmath:[NV_l] は表9によるものとする。
+
+
+[caption="表9 "]
+.通風の利用に関する区分 latexmath:[l] の通風の利用における相当換気回数 latexmath:[NV_l]
+[cols="2"]
+|====
+^| 通風の利用に関する区分 latexmath:[l] ^| 通風の利用における相当換気回数 latexmath:[NV_l]
+^| 1 ^| 0.0
+^| 2 ^| 5.0
+^| 3 ^| 20.0
+|====
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の標準住戸の負荷補正前の冷房顕熱負荷 latexmath:[L'_{CS,R,NV_L,d,t,i}] 及び日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の標準住戸の負荷補正前の冷房潜熱負荷 latexmath:[L'_{CL,R,NV_L,d,t,i}] は式(11)により表される。
+
+1～7地域の場合、
+
+latexmath:[
+\begin{equation}
+L'_{CS,R,NV_l,d,t,i} = \begin{cases}
+  \frac{ Q - Q_2 }{ Q_1 - Q_2 } \times L'_{CS,R,NV_l,Q_1,d,t,i} + \frac{ Q - Q_1 }{ Q_2 - Q_1 } \times L'_{CS,R,NV_l,Q_2,d,t,i} & (Q \ge Q_2 の場合) \\
+  \frac{ Q - Q_3 }{ Q_2 - Q_3 } \times L'_{CS,R,NV_l,Q_2,d,t,i} + \frac{ Q - Q_2 }{ Q_3 - Q_2 } \times L'_{CS,R,NV_l,Q_3,d,t,i} & (Q_2 > Q \ge Q_3 の場合) \\
+  \frac{ Q - Q_4 }{ Q_3 - Q_4 } \times L'_{CS,R,NV_l,Q_3,d,t,i} + \frac{ Q - Q_3 }{ Q_4 - Q_3 } \times L'_{CS,R,NV_l,Q_4,d,t,i} & (Q_3 > Q の場合) \\
+ \end{cases}
+\tag{11b}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+L'_{CL,R,NV_l,d,t,i} = \begin{cases}
+  \frac{ Q - Q_2 }{ Q_1 - Q_2 } \times L'_{CL,R,NV_l,Q_1,d,t,i} + \frac{ Q - Q_1 }{ Q_2 - Q_1 } \times L'_{CL,R,NV_l,Q_2,d,t,i} & (Q \ge Q_2 の場合) \\
+  \frac{ Q - Q_3 }{ Q_2 - Q_3 } \times L'_{CL,R,NV_l,Q_2,d,t,i} + \frac{ Q - Q_2 }{ Q_3 - Q_2 } \times L'_{CL,R,NV_l,Q_3,d,t,i} & (Q_2 > Q \ge Q_3 の場合) \\
+  \frac{ Q - Q_4 }{ Q_3 - Q_4 } \times L'_{CL,R,NV_l,Q_3,d,t,i} + \frac{ Q - Q_3 }{ Q_4 - Q_3 } \times L'_{CL,R,NV_l,Q_4,d,t,i} & (Q_3 > Q の場合) \\
+ \end{cases}
+\tag{11b}
+\end{equation}
+]
+
+8地域の場合、
+
+latexmath:[
+\begin{equation}
+L'_{CS,R,NV_l,d,t,i} = \begin{cases}
+  \frac{ Q - Q_2 }{ Q_1 - Q_2 } \times L'_{CS,R,NV_l,Q_1,d,t,i} + \frac{ Q - Q_1 }{ Q_2 - Q_1 } \times L'_{CS,R,NV_l,Q_2,d,t,i} & (Q \ge Q_2 の場合) \\
+  \frac{ Q - Q_3 }{ Q_2 - Q_3 } \times L'_{CS,R,NV_l,Q_2,d,t,i} + \frac{ Q - Q_2 }{ Q_3 - Q_2 } \times L'_{CS,R,NV_l,Q_3,d,t,i} & (Q_2 > Q の場合) \\
+  \end{cases}
+\tag{11c}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+L'_{CL,R,NV_l,d,t,i} = \begin{cases}
+  \frac{ Q - Q_2 }{ Q_1 - Q_2 } \times L'_{CL,R,NV_l,Q_1,d,t,i} + \frac{ Q - Q_1 }{ Q_2 - Q_1 } \times L'_{CL,R,NV_l,Q_2,d,t,i} & (Q \ge Q_2 の場合) \\
+  \frac{ Q - Q_3 }{ Q_2 - Q_3 } \times L'_{CL,R,NV_l,Q_2,d,t,i} + \frac{ Q - Q_2 }{ Q_3 - Q_2 } \times L'_{CL,R,NV_l,Q_3,d,t,i} & (Q_2 > Q の場合) \\
+ \end{cases}
+\tag{11d}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[L'_{CS,NV_l,Q_j,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] の標準住戸の負荷補正前の冷房顕熱負荷 (MJ/h)
+latexmath:[L'_{CL,NV_l,Q_j,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] の標準住戸の負荷補正前の冷房潜熱負荷 (MJ/h)
+
+である。
+
+日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] の標準住戸の負荷補正前の冷房顕熱負荷 latexmath:[L'_{CS,R,NV_l,Q_j,d,t,i}] 及び日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] の標準住戸の負荷補正前の冷房潜熱負荷 latexmath:[L'_{CL,R,NV_l,Q_j,d,t,i}] は、式(12)により表される。
+
+latexmath:[
+\begin{equation}
+\begin{split}
+& L'_{CS,R,NV_l,Q_j,d,t,i} \\
+ & = \begin{cases}
+  \frac{ \mu_C - \mu_{C,j,2} }{ \mu_{C,j,1} - \mu_{C,j,2} } \times L'_{CS,R,NV_1,Q_j,\mu_{H,j,1},d,t,i} + \frac{ \mu_C - \mu_{C,j,1} }{ \mu_{C,j,2} - \mu_{C,j,1} } \times L'_{CS,R,NV_2,Q_j,\mu_{H,j,2},d,t,i} & (\mu_C < \mu_{C,j,2} の場合) \\
+  \frac{ \mu_C - \mu_{C,j,3} }{ \mu_{C,j,2} - \mu_{C,j,3} } \times L'_{CS,R,NV_1,Q_j,\mu_{H,j,2},d,t,i} + \frac{ \mu_C - \mu_{C,j,2} }{ \mu_{C,j,3} - \mu_{C,j,2} } \times L'_{CS,R,NV_2,Q_j,\mu_{H,j,3},d,t,i} & (\mu_{C,j,2} \le \mu_C の場合) \\
+ \end{cases}
+\end{split}
+\tag{12a}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+\begin{split}
+& L'_{CL,R,NV_l,Q_j,d,t,i} \\
+ & = \begin{cases}
+  \frac{ \mu_C - \mu_{C,j,2} }{ \mu_{C,j,1} - \mu_{C,j,2} } \times L'_{CL,R,NV_1,Q_j,\mu_{H,j,1},d,t,i} + \frac{ \mu_C - \mu_{C,j,1} }{ \mu_{C,j,2} - \mu_{C,j,1} } \times L'_{CL,R,NV_2,Q_j,\mu_{H,j,2},d,t,i} & (\mu_C < \mu_{C,j,2} の場合) \\
+  \frac{ \mu_C - \mu_{C,j,3} }{ \mu_{C,j,2} - \mu_{C,j,3} } \times L'_{CL,R,NV_1,Q_j,\mu_{H,j,2},d,t,i} + \frac{ \mu_C - \mu_{C,j,2} }{ \mu_{C,j,3} - \mu_{C,j,2} } \times L'_{CL,R,NV_2,Q_j,\mu_{H,j,3},d,t,i} & (\mu_{C,j,2} \le \mu_C の場合) \\
+ \end{cases}
+\end{split}
+\tag{12b}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[L'_{CS,R,NV_l,Q_j,\mu_{C,j,k},d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] かつ冷房期の日射取得係数 latexmath:[\mu_{C,j,k}] の標準住戸の負荷補正前の冷房顕熱負荷 (MJ/h)
+latexmath:[L'_{CL,R,NV_l,Q_j,\mu_{C,j,k},d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath:[t] における暖冷房区画 latexmath:[i] の通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] かつ冷房期の日射取得係数 latexmath:[\mu_{C,j,k}] の標準住戸の負荷補正前の冷房潜熱負荷 (MJ/h)
+latexmath:[\mu_C]:: :冷房期の日射取得係数
+latexmath:[\mu_{C,j,k}]:: :断熱性能の区分 latexmath:[j] における日射取得性能の区分 latexmath:[k] の冷房期の日射取得係数
+
+である。冷房期の日射取得係数は、「9.2冷房期の日射取得係数」より求める。
+
+断熱性能の区分 latexmath:[j] の熱損失係数( latexmath:[Q_j (j=1 \sim 4)] )は地域の区分に応じて表7により表される。
+
+断熱性能の区分 latexmath:[j] における日射取得性能の区分 latexmath:[k] の冷房期の日射取得係数 latexmath:[^mu_{C,j,k}] は、地域の区分及び断熱性能の区分 latexmath:[j] の熱損失係数 latexmath:[Q_j] の区分番号に応じて表8により表される。
+
+日付 latexmath:[d] の時刻 latexmath:[t] の暖冷房区画 latexmath:[i] における通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] かつ冷房期の日射取得係数 latexmath:[\mu_{C,j,k}] の標準住戸の負荷補正前の冷房顕熱負荷 latexmath:[L'_{CS,R,NV_l,Q_j,\mu_{C,j,k},d,t,i}] 及び通風の利用における相当換気回数 latexmath:[NV_l] の熱損失係数 latexmath:[Q_j] かつ冷房期の日射取得係数 latexmath:[\mu_{C,j,k}] の標準住戸の負荷補正前の冷房潜熱負荷 latexmath:[L'_{CL,R,NV_l,Q_j,\mu_{C,j,k},d,t,i}] は、通風の利用に関する区分 latexmath:[l] 及び断熱性能の区分 latexmath:[j] 、日射取得性能の区分 latexmath:[k] 、冷房方式及び運転方法に応じて、データ「暖冷房負荷表」により表される。
+
+冷房方式とは、「住戸全体を連続的に冷房する方式」又は「居室のみを冷房する方式」をいい、これらは設置する冷房設備機器の種類によって決まり、その決定方法は第四章「暖冷房設備」第一節「全般」の付録Aにおいて規定されている。
+
+==== 8. 熱損失係数の計算方法
+
+熱交換型換気設備による暖房負荷低減を考慮した補正熱損失係数 latexmath:[Q_{HEXC}] は、地域の区分が1地域～７地域において熱交換型換気設備を採用している場合は、式(13)により表されることとし、地域の区分が8地域又は熱交換型換気設備を採用していない場合は、熱損失係数 latexmath:[Q] に等しいとする。
+
+住戸に複数の全般換気設備を設置する場合は、それぞれの設備において熱交換型換気設備による暖房負荷低減を考慮した補正熱損失係数 latexmath:[Q_{HEXC}] を計算し、計算された値のうち最も大きい値を採用することとする。また、一部の全般換気設備が熱交換型換気設備でない場合は、熱交換型換気設備は採用していないものとみなす。
+
+latexmath:[
+\begin{equation}
+Q_{HEXC} = Q - C_V \times r_V \times \eta '_t
+\tag{13}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[Q]:: :熱損失係数(W/m^2^K)
+latexmath:[C_V]:: :空気の容積比熱(Wh/m^3^K)
+latexmath:[r_V]:: :床面積当たりの換気量の比((m^3^/h)/m^2^)
+latexmath:[\eta '_t]:: :熱交換型換気設備の補正温度交換効率
+
+である。
+
+ここで、空気の容積比熱 latexmath:[C_V] は latexmath:[0.35] とし、床面積当たりの換気量の比 latexmath:[r_V] は latexmath:[4/3] (床面積 latexmath:[120] m^2^ に対する換気量 latexmath:[160] m^3^/h )とする。熱交換型換気設備の補正温度交換効率 latexmath:[\eta '_t] は、付録Aに規定される。
+
+熱損失係数 latexmath:[Q] は式(14)により表される。
+
+latexmath:[
+\begin{equation}
+Q = Q' + 0.35 \times 0.5 \times 2.4
+\tag{14}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[Q']:: :熱損失係数(換気による熱損失を含まない)(W/m^2^K)
+
+である。
+
+==== 9. 暖冷房区画 latexmath:[i] の床面積
+
+暖冷房区画 latexmath:[i] の床面積 latexmath:[A_{HCZ}] は、式(15)によるものとする。
+
+latexmath:[
+\begin{equation}
+A_{HCZ,i} = \begin{cases}
+  A_{HCZ,R,i} \times \frac{ A_{MR} }{ A_{MR,R} }  & (i=1) \\
+  A_{HCZ,R,i} \times \frac{ A_{OR} }{ A_{OR,R} }  & (i=2 \sim 5) \\
+  A_{HCZ,R,i} \times \frac{ A_{NO} }{ A_{NO,R} }  & (i=6 \sim 12) \\
+ \end{cases}
+\tag{15}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[A_{HCZ,R,i}]:: :標準住戸における暖冷房区画 latexmath:[i] の床面積 (m^2^)
+latexmath:[A_{MR}]:: :主たる居室の床面積 (m^2^)
+latexmath:[A_{OR}]:: :その他の居室の床面積 (m^2^)
+latexmath:[A_A]:: :床面積の合計 (m^2^)
+latexmath:[A_{MR,R}]:: :標準住戸の主たる居室の床面積 (m^2^)
+latexmath:[A_{OR,R}]:: :標準住戸のその他の居室の床面積 (m^2^)
+latexmath:[A_{NO,R}]:: :標準住戸の非居室の床面積 (m^2^)
+
+である。標準住戸における暖冷房区画 latexmath:[i] の床面積 latexmath:[A_{HCZ,R,i}] 、標準住戸の主たる居室の床面積 latexmath:[A_{MR,R}] 、標準住戸のその他の居室の床面積 latexmath:[A_{OR,R}] 及び標準住戸の非居室の床面積 latexmath:[A_{NO,R}] は、表10の値とする。
+
+[caption="表10 "]
+.標準住戸における主たる居室、その他の居室及び非居室の面積、並びに暖冷房区画 latexmath:[i] の床面積
+[cols="5"]
+|====
+^| 暖冷房区画 latexmath:[i] の番号 ^| (参考)想定する居室の種類 ^| 居室の種類 ^| 暖冷房区画 latexmath:  [i] の床面積 (m^2^) | 主たる居室、その他の居室、非居室の床面積 (m^2^)
+^| 1 ^| 居間食堂(LD)・台所(Ｋ) ^| 主たる居室 ^| latexmath:[29.81] ^| latexmath:[29.81]
+^| 2 ^| 和室 .4+^| その他の居室 ^| latexmath:[16.56] .4+^| latexmath:[51.34]
+^| 3 ^| 主寝室 ^| latexmath:[13.25]
+^| 4 ^| 子供室1 ^| latexmath:[10.76]
+^| 5 ^| 子供室2 ^| latexmath:[10.77]
+^| 6 ^| 浴室 .7+^| 非居室 ^| latexmath:[3.31] .7+^| latexmath:[38.93]
+^| 7 ^| 1F便所 ^| latexmath:[1.66]
+^| 8 ^| 洗面所 ^| latexmath:[3.31]
+^| 9 ^| ホール ^| latexmath:[13.25]
+^| 10 ^| クローゼット ^| latexmath:[4.97]
+^| 11 ^| 2Fホール ^| latexmath:[10.77]
+^| 12 ^| 2F便所 ^| latexmath:[1.66]
+|====
