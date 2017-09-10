@@ -14,6 +14,7 @@
 
 // 省エネ基準用の出力の場合は :ees: 自立循環用の出力の場合は :JJJ:
 :ees:
+:official:
 
 include::03HeatingAndCoolingLoadandEnvelopePerformance_01General.adoc[]
 

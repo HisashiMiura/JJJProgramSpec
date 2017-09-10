@@ -543,13 +543,20 @@ latexmath:[\Delta L'_{CS,uf,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmat
 
 通風の利用における相当換気回数 latexmath:[NV] は、「住戸全体を連続的に冷房する方式」の場合はすべての暖冷房区画( latexmath:[i=1 \sim 12] )において latexmath:[0.0] 回/hとする。
 
-ifdef::ess[]
+// ees コード
+ifndef::JJJ[]
+ifndef::official[====]
+ifndef::official[ees]
 
 「居室のみを冷房する方式」の場合は「主たる居室」(暖冷房区画の番号 latexmath:[i=1] )と「その他の居室」(暖冷房区画の番号 latexmath:[i= 2 \sim 5 ] )ごとに、通風の利用の違い(「通風を利用しない」「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」「通風を利用する(換気回数 latexmath:[20] 回/h相当以上)」)により付録Cに従って定める。
 
-endif::ess[]
+ifndef::official[====]
+endif::JJJ[]
 
-ifdef::JJJ[]
+// JJJ コード
+ifndef::ees[]
+ifndef::official[====]
+ifndef::official[JJJ]
 
 「居室のみを冷房する方式」の場合は「主たる居室」(暖冷房区画の番号 latexmath:[i=1] )と「その他の居室」(暖冷房区画の番号 latexmath:[i= 2 \sim 5 ] )ごとに、相当換気回数 latexmath:[NV] を直接入力するか、又は、立地・外部風速・採用する手法(手法1～手法3)に応じて、表i によって定まる値を適用する。自然風の利用をしない場合は、相当換気回数は latexmath:[0]  回/hである。
 
@@ -602,18 +609,22 @@ ifdef::JJJ[]
 
 |====
 
-endif::JJJ[]
+ifndef::official[====]
+endif::[]
 
-ifdef::ees[]
+// ees コード
+ifndef::JJJ[]
+ifndef::official[====]
+ifndef::official[ees]
 
 主たる居室において通風の利用が「通風を利用しない」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[0.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[5.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[20] 回/h相当以上) 」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[20.0] 回/hとする。
 
 その他の居室において通風の利用が「通風を利用しない」に該当する場合は暖冷房区画 latexmath:[i=2 \sim 5] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[0.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」に該当する場合は暖冷房区画 latexmath:[i=2 \sim 5] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[5.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[20] 回/h相当以上)」に該当する場合は暖冷房区画 latexmath:[i=2 \sim 5] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[20.0] 回/hとする。
 
-endif::ees[]
+ifndef::official[====]
+endif::JJJ[]
 
 通風の利用に関する区分 latexmath:[l] の通風の利用における相当換気回数 latexmath:[NV_l] は表9によるものとする。
-
 
 [caption="表9 "]
 .通風の利用に関する区分 latexmath:[l] の通風の利用における相当換気回数 latexmath:[NV_l]
