@@ -6,7 +6,8 @@
 
 ## 自然風の利用・制御
 1. [インターフェース仕様書](spec_natural_ventilation.adoc)
-1. [計算方法仕様書](calc_natural_ventilation.md)
+1. 計算方法仕様書  
+[第3章 暖冷房負荷と外皮性能 第1章 全般](CalculationSpec/03HeatingAndCoolingLoadandEnvelopePerformance_01General.adoc)
 
 ## 昼光利用
 1. [インターフェース仕様書](spec_daiylight.adoc)
