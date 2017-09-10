@@ -25,13 +25,7 @@ NOTE: <<GL_natural_ventilation_location>> の内容を埋め込み
 [[NV_main_room]]
 ==== 主たる居室
 
-表示条件::
-なし
-
 ===== a. 自然風の利用の有無 [選択入力]
-
-表示条件::
-なし
 
 説明::
 
@@ -154,9 +148,8 @@ image:images/NaturalVentilation/shuhou2notasseiyoukennopatan.png[]
 ====
 
 選択肢::
-* 通風を確保できる開口部のうち一面の方位が卓越風向と45度以内にない
-* 通風を確保できる開口部のうち一面の方位が卓越風向と45度以内にある
-* 手法2を適用する
+* 適用しない [規定値]
+* 適用する
 
 ===== f. 換気回数を入力する [数値入力]
 
@@ -175,13 +168,7 @@ image:images/NaturalVentilation/shuhou2notasseiyoukennopatan.png[]
 [[NV_other_room]]
 ==== その他の居室の自然風の利用
 
-表示条件::
-なし
-
 ===== a. 自然風の利用の有無 [選択入力]
-
-表示条件::
-なし
 
 説明::
 
@@ -206,7 +193,7 @@ image:images/NaturalVentilation/shuhou2notasseiyoukennopatan.png[]
 ====
 
 選択肢::
-* 利用しない
+* 利用しない [規定値]
 * 利用する
 
 ===== c. 【手法1】通風経路上の開口部面積の確保 [選択入力]
@@ -304,9 +291,8 @@ image:images/NaturalVentilation/shuhou2notasseiyoukennopatan.png[]
 ====
 
 選択肢::
-* 通風を確保できる開口部のうち一面の方位が卓越風向と45度以内にない
-* 通風を確保できる開口部のうち一面の方位が卓越風向と45度以内にある
-* 手法2を適用する
+* 適用しない [規定値]
+* 適用する
 
 ===== f. 換気回数を入力する [数値入力]
 
@@ -314,7 +300,9 @@ image:images/NaturalVentilation/shuhou2notasseiyoukennopatan.png[]
 「<<NV_other_room>>」「a. 自然風の利用の有無」＝「換気回数を選択して省エネルギー効果を評価する」
 
 説明::
+====
 換気回数を入力して省エネルギー効果を評価します。換気回数の計算方法については、こちら（[underline]#省エネ基準のPDFへリンク#）を参照してください。
+====
 
 入力規則::
 最小値=0, 最大値=50, 小数点=0位(整数), 規定値=0
