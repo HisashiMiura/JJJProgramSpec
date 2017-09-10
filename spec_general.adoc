@@ -17,7 +17,7 @@
 
 [EN]
 ====
-Input the general information that is common to all elemental technologies such as name and floor area of the house and the reigional revision. 
+Input the general information that is common to all elemental technologies such as name and floor area of the house and the reigional revision.
 ====
 
 === 環境条件
@@ -60,7 +60,7 @@ image::images//General//shitsunobunruinorei.jpg[]
 
 [EN]
 ====
-Main habitable room is the room that the ocupants stay long time in daily life except for bedtime in basic daily activities among the rooms. 
+Main habitable room is the room that the ocupants stay long time in daily life except for bedtime in basic daily activities among the rooms.
 
 No image
 
@@ -122,7 +122,7 @@ image::images//General//shitsunobunruinorei.jpg[]
 
 [EN]
 ====
-Main habitable room is the room that the ocupants stay long time in daily life except for bedtime in basic daily activities among the rooms. 
+Main habitable room is the room that the ocupants stay long time in daily life except for bedtime in basic daily activities among the rooms.
 
 No image
 
@@ -173,20 +173,20 @@ Table. Exception of Floor Area Calculation
 [cols="1,3"]
 |====================
 | Wind Screen Rooms and Sunrooms |
-Not include the floor area of the wind screen room and sunrooms into the floor area. + 
+Not include the floor area of the wind screen room and sunrooms into the floor area. +
 However, when assuming the wind screen room etc into the space inside thermal borders, the space can be included into the floor area.
-| Bay Windows | The floor area of the waist bay window where the prominance from the external wall surface is less than 
+| Bay Windows | The floor area of the waist bay window where the prominance from the external wall surface is less than
 500 mm and the height from the floor of the bottom end is more than 300 mm shall not be included into the total floor area.
-| Hut Back Storing and Floor Lower Storing | 
+| Hut Back Storing and Floor Lower Storing |
 Among the hut back storing and floor lower storing to exist inside of a thermal border, not include the floor area of the hut back storing and floor lower storing that can not be included into the total floor area defined under Building Construction Code.
-|　Store Rooms | Not count the floor area of store room, garade and so on where the the part(s)/partision(s) facing the habitable room(s) are insulated.  
+|　Store Rooms | Not count the floor area of store room, garade and so on where the the part(s)/partision(s) facing the habitable room(s) are insulated.
 
 |====================
 
 
 1) Calculation of Floor Area of Main Habitable Room::
 
-It shall be the sum of the floor area in the living, dyning and kitchen. 
+It shall be the sum of the floor area in the living, dyning and kitchen.
 In case that there are multiple livings, dynings, kitchens, the sum of the floor areas belong to main habitable room shall be the area as "main habitable room ".
 
 2) Calculation of Floor Area of Other Habitable Rooms ::
@@ -204,7 +204,7 @@ In the case of having an atrium space etc. in the house, consider that there is 
 6) 一体的空間の扱いについて::
 間仕切り壁や扉等がなく、水平方向及び垂直方向に空間的に連続する場合は、ひとつの室とみなして床面積を算出します。また、吹抜け等に面して開放された空間についても、当該吹抜け等が存する「主たる居室」、「その他の居室」又は「非居室」と一体であると判断し、床面積を算定することとします。なお、「主たる居室」と空間的に連続する「その他の居室」及び「非居室」は「主たる居室」に含めることとし、「その他の居室」と空間的に連続する「非居室」は「その他の居室」に含めることとして床面積を算出します。
 
-If there are no partition walls, doors, etc. and they are spatially continuous in the horizontal direction and/or the vertical direction, the floor area of every space is calculated as one room. + 
+If there are no partition walls, doors, etc. and they are spatially continuous in the horizontal direction and/or the vertical direction, the floor area of every space is calculated as one room. +
 Also, the space opened facing the atrium space etc. shall be integrated with the "main habitable room", the "other habitable room" or the "non habitable room" where the atrium space etc. exists, and the floor area is to be calculated.
 "Other habitable room" and/or "non habitable room" spacially connected to the "main habitable room" are classified as "main habitable room".
 "Non habitable room" spacially connected to the "other habitable room" are classified as "Other habitable room".
@@ -242,7 +242,7 @@ Also, the space opened facing the atrium space etc. shall be integrated with the
 
 [EN]
 ====
-[underline]#Reasional revision based on energy efficiency standard# is the revision of nationawide divided into eight regions mainly 
+[underline]#Reasional revision based on energy efficiency standard# is the revision of nationawide divided into eight regions mainly
 municipality unit with outside condition as the evaluation indices, and it is represented by 1 ~ 8 reasional revisions.
 Because the difference in climatic conditions is large in each region, the results of primary energy consumption such as heating, cooling, domestic hot water supply and the like are greatly different, so in order to reduce the difference in climatic conditions and appropriately evaluate energy conservation performance, it was divided into 8 revisions.
 ====
@@ -281,7 +281,7 @@ Fig. Reasional revision based on energy efficiency standard
 太陽光発電設備・太陽熱給湯設備を設置する場合は、「指定する」を選択してください。
 ====
 
-[ポップアップ] 年間日差量地域区分::
+[ポップアップ] 年間日射量地域区分::
 ====
 image::images//General//nenkannissharyouchiikikubun.png[]
 
