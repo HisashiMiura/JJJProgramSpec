@@ -8,7 +8,7 @@
 
 // ees
 ifndef::JJJ[]
-ifndef::oficial[====]
+ifndef::official[====]
 ifndef::official[ees]
 
 latexmath:[
@@ -27,12 +27,12 @@ latexmath:[l_{i,j}]:: :蓄熱部位latexmath:[i]の層 latexmath:[j] の有効�
 latexmath:[A_i]:: :蓄熱部位 latexmath:[i] の表面積 (m^2^）
 latexmath:[A_A]:: :床面積の合計 (m^2^)
 
-ifndef::oficial[====]
+ifndef::official[====]
 endif::JJJ[]
 
 // JJJ
 ifndef::ees[]
-ifndef::oficial[====]
+ifndef::official[====]
 ifndef::official[JJJ]
 
 latexmath:[
@@ -51,7 +51,7 @@ latexmath:[l_{i,j}]:: :蓄熱部位latexmath:[i]の層 latexmath:[j] の有効�
 latexmath:[A_i]:: :蓄熱部位 latexmath:[i] の表面積 (m^2^）
 latexmath:[A_f]:: :「主たる居室」、「その他の居室」又は「非居室」の床面積の合計 (m^2^)
 
-ifndef::oficial[====]
+ifndef::official[====]
 endif::ees[]
 
 である。蓄熱部位 latexmath:[i] の層 latexmath:[j] の容積比熱 latexmath:[(c \rho)_{i,j}] 及び蓄熱部位 latexmath:[i] の層 latexmath:[j] の有効蓄熱厚さ latexmath:[l_{i,j}] は、表B.1によるものとする。

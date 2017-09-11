@@ -1,25 +1,7 @@
 = 自立循環型住宅への設計プログラム エネルギー消費性能の計算方法
-{docdatetime}
-:doctype: article
-:toc: left
-:toc-title: 目次
-:pagenums:
-:figurenums:
-:figure-caption: 図
-:table-caption: 表
-:note-caption: メモ
-:warning-caption: 注意
-:appendix-caption: 付録
-:stem: latexmath
 
 // 省エネ基準用の出力の場合は :ees: 自立循環用の出力の場合は :JJJ:
 :JJJ:
 :official:
 
-include::03HeatingAndCoolingLoadandEnvelopePerformance_01General.adoc[]
-
-<<<
-
-include::09PV.adoc[]
-
-<<<
+include::CalculationSpec.adoc[]
