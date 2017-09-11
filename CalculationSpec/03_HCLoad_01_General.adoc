@@ -10,8 +10,9 @@
 
 ==== 2. 引用規格
 
-JIS B 8628 :2003 全熱交換器 +
-JRA 4056 :2006 全熱交換器有効換気量試験方法
+[horizontal]
+JIS B 8628 :2003:: 全熱交換器 +
+JRA 4056 :2006:: 全熱交換器有効換気量試験方法
 
 ==== 3. 用語の定義
 
@@ -209,7 +210,7 @@ latexmath:[Q]:: :熱損失係数 (W/m^2^K)
 .式(2)における係数 latexmath:[\alpha_{R,Evp,i}] 及び latexmath:[b_{R,Evp,i}]
 [cols="7"]
 |====
-.4+^| 地域の区分 6+^| 暖房方式及び運転方法の区分
+.4+^.^| 地域の区分 6+^| 暖房方式及び運転方法の区分
 2+^| (い) 2+^| (ろ) 2+^| (は)
 2+^| 「住戸全体を連続的に暖房する方法」 2+^| 「居室のみを暖房する方式」かつ「連続運転」の場合 2+^| 「居室のみを暖房する方式」かつ「間歇運転」の場合
 ^| latexmath:[\alpha_{R,Evp,i}] ^| latexmath:[b_{R,Evp,i}] ^| latexmath:[\alpha_{R,Evp,i}] ^| latexmath:[b_{R,Evp,i}] ^| latexmath:[\alpha_{R,Evp,i}] ^| latexmath:[b_{R,Evp,i}]
@@ -267,7 +268,7 @@ f_{TD,i} = \min(\alpha_{TD,i} \times Q^2 +1, f_{TD,max} )
 .式(4)における係数 latexmath:[\alpha_{TD,i}]
 [cols="7"]
 |====
-.4+^| 地域の区分 6+^| 暖房方式及び運転方法の区分
+.4+^.^| 地域の区分 6+^| 暖房方式及び運転方法の区分
 2+^| (い) 2+^| (ろ) 2+^| (は)
 2+^| 「住戸全体を連続的に暖房する方法」 2+^| 「居室のみを暖房する方式」かつ「連続運転」の場合 2+^| 「居室のみを暖房する方式」かつ「間歇運転」の場合
 ^| latexmath:[\alpha_{TD,i}] ^| latexmath:[f_{TD,max}] ^| latexmath:[\alpha_{TD,i}] ^| latexmath:[f_{TD,max}] ^| latexmath:[\alpha_{TD,i}] ^| latexmath:[f_{TD,max}]
@@ -370,8 +371,11 @@ latexmath:[\Delta L'_{H,uf,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath
 
 // JJJ コード
 ifndef::ees[]
-ifndef::official[====]
-ifndef::official[JJJ]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
 
 蓄熱の利用の有無は、「主たる居室」「そのほかの居室」「非居室」ごとに判断する。(暖房方式が「住戸全体を連続的に暖房する方式」の場合は「非居室」の蓄熱の有無を判断し、暖房方式が「居室のみを暖房する方式」の場合は、「非居室」に暖房負荷が発生しないため、「非居室」の蓄熱の有無は判断しない。)
 
@@ -384,7 +388,7 @@ endif::ees[]
 .蓄熱の利用の程度を表す係数 latexmath:[r_{TS}]
 [cols="6"]
 |====
-.2+^| 地域の区分 5+^| 暖房期の日射地域区分
+.2+^.^| 地域の区分 5+^| 暖房期の日射地域区分
 ^| H1 ^| H2 ^| H3 ^| H4 ^| H5
 
 ^| 1 ^| latexmath:[0.0] ^| latexmath:[0.0] ^| latexmath:[1.0] ^| latexmath:[1.0] ^| latexmath:[1.0]
@@ -509,7 +513,9 @@ latexmath:[\mu_{H,j,k}]:: 断熱性能の区分 latexmath:[j] における日射
 ^| 0.045 ^| 0.045 ^| 0.043 ^| 0.052 ^| 0.056 ^| 0.053 ^| 0.050 ^| 0.050
 .2+^| 4 .2+^| 3 ^| 0.104 ^| 0.096 ^| 0.096 ^| 0.116 ^| 0.137 ^| 0.132 ^| 0.141 ^| －
 ^| 0.063 ^| 0.063 ^| 0.060 ^| 0.072 ^| 0.078 ^| 0.073 ^| 0.070 ^| 0.065
-10+| (上段：暖房期の日射取得係数 latexmath:[\mu_{H,j,k}] / 下段：冷房期の日射取得係数 latexmath:[\mu_{C,j,k}] )
+10+<a|
+上段：暖房期の日射取得係数 latexmath:[\mu_{H,j,k}] +
+下段：冷房期の日射取得係数 latexmath:[\mu_{C,j,k}]
 
 |====
 
@@ -555,8 +561,11 @@ latexmath:[\Delta L'_{CS,uf,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmat
 
 // ees コード
 ifndef::JJJ[]
-ifndef::official[====]
-ifndef::official[ees]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
 
 「居室のみを冷房する方式」の場合は「主たる居室」(暖冷房区画の番号 latexmath:[i=1] )と「その他の居室」(暖冷房区画の番号 latexmath:[i= 2 \sim 5 ] )ごとに、通風の利用の違い(「通風を利用しない」「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」「通風を利用する(換気回数 latexmath:[20] 回/h相当以上)」)により付録Cに従って定める。
 
@@ -565,8 +574,11 @@ endif::JJJ[]
 
 // JJJ コード
 ifndef::ees[]
-ifndef::official[====]
-ifndef::official[JJJ]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
 
 「居室のみを冷房する方式」の場合は「主たる居室」(暖冷房区画の番号 latexmath:[i=1] )と「その他の居室」(暖冷房区画の番号 latexmath:[i= 2 \sim 5 ] )ごとに、相当換気回数 latexmath:[NV] を直接入力するか、又は、立地・外部風速・採用する手法(手法1～手法3)に応じて、表i によって定まる値を適用する。自然風の利用をしない場合は、相当換気回数は latexmath:[0]  回/hである。
 
@@ -604,17 +616,13 @@ ifndef::official[JJJ]
 | 立地2	| 2m/s以上 | 手法1a/3a | 採用する | 25
 | 立地2	| 2m/s以上 | 手法1b/3b | 採用しない | 33
 | 立地2	| 2m/s以上 | 手法1b/3b | 採用する | 50
-5+<|
-※1　手法1と手法3は排他の関係にある。
-
+5+<a|
+※1　手法1と手法3は排他の関係にある。 +
 ※2　立地1の場合、手法2の効果は無い（従って、手法2の採用の有無は問わない。）
 
-<参考>
-
-手法1: 通風経路上の開口部面積の確保 (1a 開口面積小の組み合わせ 1b 開口面積大の組み合わせ)
-
-手法2: 卓越風向に応じた開口部配置
-
+<参考> +
+手法1: 通風経路上の開口部面積の確保 (1a 開口面積小の組み合わせ 1b 開口面積大の組み合わせ) +
+手法2: 卓越風向に応じた開口部配置 +
 手法3: 高窓の利用 (3a 開口面積小の組み合わせ 3b 開口面積大の組み合わせ)
 
 |====
@@ -624,8 +632,11 @@ endif::[]
 
 // ees コード
 ifndef::JJJ[]
-ifndef::official[====]
-ifndef::official[ees]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
 
 主たる居室において通風の利用が「通風を利用しない」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[0.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[5] 回/h相当以上)」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[5.0] 回/hとし、通風の利用が「通風を利用する(換気回数 latexmath:[20] 回/h相当以上) 」に該当する場合は暖冷房区画 latexmath:[i=1] における通風の利用における相当換気回数 latexmath:[NV] は latexmath:[20.0] 回/hとする。
 
