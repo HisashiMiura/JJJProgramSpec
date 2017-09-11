@@ -368,6 +368,16 @@ latexmath:[\Delta L'_{H,uf,R,d,t,i}]:: :日付 latexmath:[d] の時刻 latexmath
 
 蓄熱の利用の程度 latexmath:[TS_l] における蓄熱の利用の程度の区分 latexmath:[l] において、蓄熱の利用なしの場合は latexmath:[l=0] とし、蓄熱の利用ありの場合は latexmath:[l=1] とする。蓄熱の利用の有無は、通常、蓄熱の利用なしとするが、付録Bに規定される蓄熱の利用がある場合の要件を満たす場合は、蓄熱の利用ありとしてよい。
 
+// JJJ コード
+ifndef::ees[]
+ifndef::official[====]
+ifndef::official[JJJ]
+
+蓄熱の利用の有無は、「主たる居室」「そのほかの居室」「非居室」ごとに判断する。(暖房方式が「住戸全体を連続的に暖房する方式」の場合は「非居室」の蓄熱の有無を判断し、暖房方式が「居室のみを暖房する方式」の場合は、「非居室」に暖房負荷が発生しないため、「非居室」の蓄熱の有無は判断しない。)
+
+ifndef::official[====]
+endif::ees[]
+
 蓄熱の利用の程度を表す係数 latexmath:[r_{TS}] は、 latexmath:[L'_{H,R,TS_0,d,t,i} \le L'_{H,R,TS_1,d,t,i}] の場合は latexmath:[0.0] とし、 latexmath:[L'_{H,R,TS_0,d,t,i} > L'_{H,R,TS_1,d,t,i}] の場合は、表6に定める値とする。
 
 [caption="表6 "]
