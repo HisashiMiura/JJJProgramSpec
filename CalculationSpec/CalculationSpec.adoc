@@ -20,10 +20,6 @@ include::03_HCLoad_01_General.adoc[]
 
 <<<
 
-include::03_HCLoad_01_General_App_B.adoc[]
-
-<<<
-
 include::03_HCLoad_02_EnvelopePerformance.adoc[]
 
 <<<
