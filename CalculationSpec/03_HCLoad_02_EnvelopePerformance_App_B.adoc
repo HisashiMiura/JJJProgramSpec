@@ -1,0 +1,5 @@
+:stem: latexmath
+
+==== 付録B 温度差係数
+
+NOTE: 付録B 全文 省略

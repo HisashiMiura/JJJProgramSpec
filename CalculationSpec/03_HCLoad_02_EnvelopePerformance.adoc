@@ -1,0 +1,742 @@
+:stem: latexmath
+
+=== 第二節 外皮性能
+
+==== 1. 適用範囲
+
+この計算は、用途が住宅である建築物又は建築物の部分における外皮の平均熱貫流率及び平均日射熱取得率の計算に適用する。
+
+==== 2. 引用規格
+
+[horizontal]
+JIS A 4706 :2015:: サッシ
+JIS A 4710 :2015:: 建具の断熱性試験方法
+JIS A 2102-1 :2015:: 窓及びドアの熱性能－熱貫流率の計算－第1部 :一般
+
+==== 3. 用語の定義
+
+第一章の定義を適用する。
+
+==== 4. 記号及び単位
+
+===== 4.1 記号
+
+本計算で用いる記号及び単位は表1による。
+
+NOTE: 表1 省略
+
+===== 4.2 添え字
+本計算で用いる添え字は表2による。
+
+NOTE: 表2 省略
+
+==== 5. 熱損失係数（換気による熱損失を含まない）
+
+NOTE: 5 全文 省略
+
+==== 6. 日射取得係数
+
+NOTE: 6 全文 省略
+
+==== 7. 外皮平均熱貫流率並びに暖房期及び冷房期の平均日射熱取得率
+
+NOTE: 7 全文 省略
+
+==== 8. 当該住戸の外皮の部位の面積等を用いて外皮性能を評価する方法
+
+===== 8.1 外皮平均熱貫流率
+
+NOTE: 8.1 全文 省略
+
+===== 8.2 暖房期の平均日射熱取得率及び冷房期の平均日射熱取得率
+
+NOTE: 8.2 全文 省略
+
+===== 8.3 床面積の合計に対する外皮の部位の面積の合計の比
+
+NOTE: 8.3 全文 省略
+
+===== 8.4 外皮の部位の面積及び熱橋等の長さ等
+
+NOTE: 8.4 全文 省略
+
+===== 8.5 外皮の部位及び熱橋等の温度差係数
+
+NOTE: 8.5 全文 省略
+
+===== 8.6 外皮の部位の方位係数
+
+NOTE: 8.6 全文 省略
+
+===== 8.7 外皮の部位の熱貫流率及び熱橋等の線熱貫流率
+
+NOTE: 8.7 全文 省略
+
+===== 8.8 外皮の部位の日射熱取得率
+
+NOTE: 8.8 全文 省略
+
+==== 9. 当該住戸の外皮の部位の面積等を用いずに外皮性能を評価する方法
+
+===== 9.1 適用範囲
+
+本方法は一戸建ての住宅で木造の単位住戸に適用する。
+
+===== 9.2 外皮平均熱貫流率
+
+外皮平均熱貫流率 latexmath:[U_A] は式(9a)及び式(9b)により算出し、100分の1未満の端数を切り上げた小数第二位までの値とする。
+
+latexmath:[
+\begin{equation}
+\begin{split}
+U_A = \frac{ q }{ (A_{env'} ) }
+\end{split}
+\tag{9a}
+\end{equation}
+]
+
+// ees コード
+ifndef::JJJ[]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
+
+latexmath:[
+\begin{equation}
+\begin{split}
+q &= A'_{roof} \times H_{roof} \times U_{roof} \\
+  &+ ( A'_{wall,SW} + A'_{wall,NW} + A'_{wall,NE} + A'_{wall,SE} ) \times H_{wall} \times U_{wall} \\
+  &+ ( A'_{door,SW} + A'_{door,NW} + A'_{door,NE} + A'_{door,SE} ) \times H_{door} \times U_{door} \\
+  &+ ( A'_{wnd,SW} + A'_{wnd,NW} + A'_{wnd,NE} + A'_{wnd,SE} ) \times H_{wnd} × U_{wnd} \\
+  &+ A'_{IF} \times H_{floor} \times U_{floor} \\
+  &+ ( ( A'_{base,SW} + A'_{base,NW} + A'_{base,NE} + A'_{base,SE} ) \times H_{base,OS} + A'_{base,IS} \times H_{base,IS} ) \times U_{base} \\
+  &+ ( ( A'_{base,d,SW} + A'_{base,d,NW} + A'_{base,d,NE} + A'_{base,d,SE} ) \times H_{base,OS} + A'_{base,d,IS} \times H_{base,IS} ) \times U_{base,d} \\
+  &+ ( ( L'_{prm,SW} + L'_{prm,NW} + L'_{prm,NE} + L'_{prm,SE} ) \times H_{prm,OS} + L'_{prm,IS} × H_{prm,IS} ) \times \psi_{prm} \\
+  &+ ( ( L'_{prm,d,SW} + L'_{prm,d,NW} + L'_{prm,d,NE} + L'_{prm,d,SE} ) \times H_{prm,OS} + L'_{prm,d,IS} \times H_{prm,IS} ) \times \psi_{prm,d}
+\end{split}
+\tag{9b}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[q]:: :単位温度差当たりの外皮熱損失量 (W/K)
+latexmath:[A'_{env}]:: :標準住戸における外皮の部位の面積の合計 (m^2^)
+latexmath:[A'_{roof}]:: :標準住戸における屋根又は天井の面積 (m^2^)
+latexmath:[A'_{wall,SW}]:: :標準住戸における南西に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,NW}]:: :標準住戸における北西に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,NE}]:: :標準住戸における北東に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,SE}]:: :標準住戸における南東に面した壁の面積 (m^2^)
+latexmath:[A'_{door,SW}]:: :標準住戸における南西に面したドアの面積 (m^2^)
+latexmath:[A'_{door,NW}]:: :標準住戸における北西に面したドアの面積 (m^2^)
+latexmath:[A'_{door,NE}]:: :標準住戸における北東に面したドアの面積 (m^2^)
+latexmath:[A'_{door,SE}]:: :標準住戸における南東に面したドアの面積 (m^2^)
+latexmath:[A'_{wnd,SW}]:: :標準住戸における南西に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,NW}]:: :標準住戸における北西に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,NE}]:: :標準住戸における北東に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,SE}]:: :標準住戸における南東に面した窓の面積 (m^2^)
+latexmath:[A'_{IF}]:: :標準住戸における床断熱した床の面積 (m^2^)
+latexmath:[A'_{base,SW}]:: :標準住戸における南西に面した玄関、勝手口その他これらに類する部分(以下、「玄関等」という。)を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,NW}]:: :標準住戸における北西に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,NE}]:: :標準住戸における北東に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,SE}]:: :標準住戸における南東に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,IS}]:: :標準住戸における床下に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,d,SW}]:: :標準住戸における南西に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,NW}]:: :標準住戸における北西に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,NE}]:: :標準住戸における北東に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,SE}]:: :標準住戸における南東に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,IS}]:: :標準住戸における床下に面した玄関等の基礎の面積 (m^2^)
+latexmath:[L'_{prm,SW}]:: :標準住戸における南西に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,NW}]:: :標準住戸における北西に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,NE}]:: :標準住戸における北東に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,SE}]:: :標準住戸における南東に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,IS}]:: :標準住戸における床下に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,SW}]:: :標準住戸における南西に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,NW}]:: :標準住戸における北西に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,NE}]:: :標準住戸における北東に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,SE}]:: :標準住戸における南東に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,IS}]:: :標準住戸における床下に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[H_{roof}]:: :屋根又は天井の温度差係数 (-)
+latexmath:[H_{wall}]:: :壁の温度差係数 (-)
+latexmath:[H_{door}]:: :ドアの温度差係数 (-)
+latexmath:[H_{wnd}]:: :窓の温度差係数 (-)
+latexmath:[H_{floor}]:: :床の温度差係数 (-)
+latexmath:[H_{base,OS}]:: :外気に面した基礎の温度差係数 (-)
+latexmath:[H_{base,IS}]:: :床下に面した基礎の温度差係数 (-)
+latexmath:[H_{prm,OS}]:: :外気に面した土間床等の周辺部の温度差係数 (-)
+latexmath:[H_{prm,IS}]:: :床下に面した土間床等の周辺部の温度差係数 (-)
+latexmath:[U_{roof}]:: :屋根又は天井の熱貫流率 (W/m^2^K)
+latexmath:[U_{wall}]:: :壁の熱貫流率 (W/m^2^K)
+latexmath:[U_{door}]:: :ドアの熱貫流率 (W/m^2^K)
+latexmath:[U_{wnd}]:: :窓の熱貫流率 (W/m^2^K)
+latexmath:[U_{floor}]:: :床の熱貫流率 (W/m^2^K)
+latexmath:[U_{base}]:: :玄関等を除く基礎の熱貫流率 (W/m^2^K)
+latexmath:[U_{base,d}]:: :玄関等の基礎の熱貫流率 (W/m^2^K)
+latexmath:[\psi_{prm}]:: :玄関等を除く土間床等の外周部の線熱貫流率 (W/mK)
+latexmath:[\psi_{prm,d}]:: :玄関等の土間床等の外周部の線熱貫流率 (W/mK)
+
+である。
+
+ifndef::official[====]
+endif::JJJ[]
+
+// JJJ コード
+ifndef::ees[]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
+
+latexmath:[
+\begin{equation}
+\begin{split}
+q &= A'_{roof} \times H_{roof} \times U_{roof} \\
+  &+ ( A'_{wall,0} + A'_{wall,90} + A'_{wall,180} + A'_{wall,270} ) \times H_{wall} \times U_{wall} \\
+  &+ ( A'_{door,0} + A'_{door,90} + A'_{door,180} + A'_{door,270} ) \times H_{door} \times U_{door} \\
+  &+ ( A'_{wnd,0} + A'_{wnd,90} + A'_{wnd,180} + A'_{wnd,270} ) \times H_{wnd} × U_{wnd} \\
+  &+ A'_{IF} \times H_{floor} \times U_{floor} \\
+  &+ ( ( A'_{base,0} + A'_{base,90} + A'_{base,180} + A'_{base,270} ) \times H_{base,OS} + A'_{base,IS} \times H_{base,IS} ) \times U_{base} \\
+  &+ ( ( A'_{base,d,0} + A'_{base,d,90} + A'_{base,d,180} + A'_{base,d,270} ) \times H_{base,OS} + A'_{base,d,IS} \times H_{base,IS} ) \times U_{base,d} \\
+  &+ ( ( L'_{prm,0} + L'_{prm,90} + L'_{prm,180} + L'_{prm,270} ) \times H_{prm,OS} + L'_{prm,IS} × H_{prm,IS} ) \times \psi_{prm} \\
+  &+ ( ( L'_{prm,d,0} + L'_{prm,d,90} + L'_{prm,d,180} + L'_{prm,d,270} ) \times H_{prm,OS} + L'_{prm,d,IS} \times H_{prm,IS} ) \times \psi_{prm,d}
+\end{split}
+\tag{ib}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[q]:: :単位温度差当たりの外皮熱損失量 (W/K)
+latexmath:[A'_{env}]:: :標準住戸における外皮の部位の面積の合計 (m^2^)
+latexmath:[A'_{roof}]:: :標準住戸における屋根又は天井の面積 (m^2^)
+latexmath:[A'_{wall,0}]:: :標準住戸における主開口方位から0°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,90}]:: :標準住戸における主開口方位から90°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,180}]:: :標準住戸における主開口方位から180°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,270}]:: :標準住戸における主開口方位から270°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{door,0}]:: :標準住戸における主開口方位から0°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{door,90}]:: :標準住戸における主開口方位から90°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{door,180}]:: :標準住戸における主開口方位から180°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{door,270}]:: :標準住戸における主開口方位から270°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{wnd,0}]:: :標準住戸における主開口方位から0°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,90}]:: :標準住戸における主開口方位から90°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,180}]:: :標準住戸における主開口方位から180°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,270}]:: :標準住戸における主開口方位から270°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{IF}]:: :標準住戸における床断熱した床の面積 (m^2^)
+latexmath:[A'_{base,0}]:: :標準住戸における主開口方位から0°の方向に面した玄関、勝手口その他これらに類する部分(以下、「玄関等」という。)を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,90}]:: :標準住戸における主開口方位から90°の方向に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,180}]:: :標準住戸における主開口方位から180°の方向に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,270}]:: :標準住戸における主開口方位から270°の方向に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,IS}]:: :標準住戸における床下に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,d,0}]:: :標準住戸における主開口方位から0°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,90}]:: :標準住戸における主開口方位から90°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,180}]:: :標準住戸における主開口方位から180°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,270}]:: :標準住戸における主開口方位から270°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,IS}]:: :標準住戸における床下に面した玄関等の基礎の面積 (m^2^)
+latexmath:[L'_{prm,0}]:: :標準住戸における主開口方位から0°の方向に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,90}]:: :標準住戸における主開口方位から90°の方向に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,180}]:: :標準住戸における主開口方位から180°の方向に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,270}]:: :標準住戸における主開口方位から270°の方向に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,IS}]:: :標準住戸における床下に面した玄関等を除く土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,0}]:: :標準住戸における主開口方位から0°の方向に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,90}]:: :標準住戸における主開口方位から90°の方向に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,180}]:: :標準住戸における主開口方位から180°の方向に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,270}]:: :標準住戸における主開口方位から270°の方向に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[L'_{prm,d,IS}]:: :標準住戸における床下に面した玄関等の土間床等の外周部の長さ (m)
+latexmath:[H_{roof}]:: :屋根又は天井の温度差係数 (-)
+latexmath:[H_{wall}]:: :壁の温度差係数 (-)
+latexmath:[H_{door}]:: :ドアの温度差係数 (-)
+latexmath:[H_{wnd}]:: :窓の温度差係数 (-)
+latexmath:[H_{floor}]:: :床の温度差係数 (-)
+latexmath:[H_{base,OS}]:: :外気に面した基礎の温度差係数 (-)
+latexmath:[H_{base,IS}]:: :床下に面した基礎の温度差係数 (-)
+latexmath:[H_{prm,OS}]:: :外気に面した土間床等の周辺部の温度差係数 (-)
+latexmath:[H_{prm,IS}]:: :床下に面した土間床等の周辺部の温度差係数 (-)
+latexmath:[U_{roof}]:: :屋根又は天井の熱貫流率 (W/m^2^K)
+latexmath:[U_{wall}]:: :壁の熱貫流率 (W/m^2^K)
+latexmath:[U_{door}]:: :ドアの熱貫流率 (W/m^2^K)
+latexmath:[U_{wnd}]:: :窓の熱貫流率 (W/m^2^K)
+latexmath:[U_{floor}]:: :床の熱貫流率 (W/m^2^K)
+latexmath:[U_{base}]:: :玄関等を除く基礎の熱貫流率 (W/m^2^K)
+latexmath:[U_{base,d}]:: :玄関等の基礎の熱貫流率 (W/m^2^K)
+latexmath:[\psi_{prm}]:: :玄関等を除く土間床等の外周部の線熱貫流率 (W/mK)
+latexmath:[\psi_{prm,d}]:: :玄関等の土間床等の外周部の線熱貫流率 (W/mK)
+
+である。
+
+ここで、主開口方位からの角度は建物を真上から見て時計回りの方向にとるものとする。例えば、主開口方位が南の場合、「主開口方位から90°の方向に面した」方位は西である。
+
+ifndef::official[====]
+endif::ees[]
+
+===== 9.3 暖房期の平均日射熱取得率及び冷房期の平均日射熱取得率
+
+暖房期の平均日射熱取得率 latexmath:[\eta_{A,H}] は、式(10a)及び式(10b)により計算された値の10分の1未満の端数を切り下げ、小数第一位までの値とする。冷房期の平均日射熱取得率 latexmath:[\eta_{A,C}] は、式(11a)及び式(11b)により計算された値の10分の1未満の端数を切り上げ、小数第一位までの値とする。
+
+latexmath:[
+\begin{equation}
+\eta_{A,H} = \frac{ m_H }{ A'_{env} } \times 100
+\tag{10a}
+\end{equation}
+]
+
+// ees コード
+ifndef::JJJ[]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
+
+latexmath:[
+\begin{equation}
+\begin{split}
+m_H &= A'_{roof} \times \nu_{H,top} \times \eta_{H,roof} \\
+    &+ ( A'_{wall,SW} \times \nu_{H,SW} + A'_{wall,NW} \times \nu_{H,NW} + A'_{wall,NE} \times \nu_{H,NE} + A'_{wall,SE} \times \nu_{H,SE} ) \times \eta_{H,wall} \\
+    &+ A'_{door,SW} \times \nu_{H,SW} \times \eta_{H,door,SW} \\
+    &+ A'_{door,NW} \times \nu_{H,NW} \times \eta_{H,door,NW} \\
+    &+ A'_{door,NE} \times \nu_{H,NE} \times \eta_{H,door,NE} \\
+    &+ A'_{door,SE} \times \nu_{H,SE} \times \eta_{H,door,SE} \\
+    &+ A'_{wnd,SW} \times \nu_{H,SW} \times \eta_{H,wnd,SW} \\
+    &+ A'_{wnd,NW} \times \nu_{H,NW} \times \eta_{H,wnd,NW} \\
+    &+ A'_{wnd,NE} \times \nu_{H,NE} \times \eta_{H,wnd,NE} \\
+    &+ A'_{wnd,SE} \times \nu_{H,SE} \times \eta_{H,wnd,SE} \\
+    &+ ( A'_{base,SW} \times \nu_{H,SW} + A'_{base,NW} \times \nu_{H,NW} + A'_{base,NE} \times \nu_{H,NE} + A'_{base,SE} \times \nu_{H,SE} ) \times \eta_{H,base} \\
+    &+ ( A'_{base,d,SW} \times \nu_{H,SW} + A'_{base,d,NW} \times \nu_{H,NW} + A'_{base,d,NE} \times \nu_{H,NE} + A'_{base,d,SE} \times \nu_{H,SE} ) \times \eta_{H,base,d}
+\end{split}
+\tag{10b}
+\end{equation}
+]
+
+ifndef::official[====]
+endif::JJJ[]
+
+// JJJ コード
+ifndef::ees[]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
+
+latexmath:[
+\begin{equation}
+\begin{split}
+m_H &= A'_{roof} \times \nu_{H,top} \times \eta_{H,roof} \\
+    &+ ( A'_{wall,0} \times \nu_{H,0} + A'_{wall,90} \times \nu_{H,90} + A'_{wall,180} \times \nu_{H,180} + A'_{wall,270} \times \nu_{H,270} ) \times \eta_{H,wall} \\
+    &+ A'_{door,0} \times \nu_{H,0} \times \eta_{H,door,0} \\
+    &+ A'_{door,90} \times \nu_{H,90} \times \eta_{H,door,90} \\
+    &+ A'_{door,180} \times \nu_{H,180} \times \eta_{H,door,180} \\
+    &+ A'_{door,270} \times \nu_{H,270} \times \eta_{H,door,270} \\
+    &+ A'_{wnd,0} \times \nu_{H,0} \times \eta_{H,wnd,0} \\
+    &+ A'_{wnd,90} \times \nu_{H,90} \times \eta_{H,wnd,90} \\
+    &+ A'_{wnd,180} \times \nu_{H,180} \times \eta_{H,wnd,180} \\
+    &+ A'_{wnd,270} \times \nu_{H,270} \times \eta_{H,wnd,270} \\
+    &+ ( A'_{base,0} \times \nu_{H,0} + A'_{base,90} \times \nu_{H,90} + A'_{base,180} \times \nu_{H,180} + A'_{base,270} \times \nu_{H,270} ) \times \eta_{H,base} \\
+    &+ ( A'_{base,d,0} \times \nu_{H,0} + A'_{base,d,90} \times \nu_{H,90} + A'_{base,d,180} \times \nu_{H,180} + A'_{base,d,270} \times \nu_{H,270} ) \times \eta_{H,base,d}
+\end{split}
+\tag{iib}
+\end{equation}
+]
+
+ifndef::official[====]
+endif::ees[]
+
+latexmath:[
+\begin{equation}
+\eta_{A,C} = \frac{ m_C }{ A'_{env} } \times 100
+\tag{11a}
+\end{equation}
+]
+
+// ees コード
+ifndef::JJJ[]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
+
+latexmath:[
+\begin{equation}
+\begin{split}
+m_C &= A'_{roof} \times \nu_{C,top} \times \eta_{C,roof} \\
+    &+ ( A'_{wall,SW} \times \nu_{C,SW} + A'_{wall,NW} \times \nu_{C,NW} + A'_{wall,NE} \times \nu_{C,NE} + A'_{wall,SE} \times \nu_{C,SE} ) \times \eta_{C,wall} \\
+    &+ A'_{door,SW} \times \nu_{C,SW} \times \eta_{C,door,SW} \\
+    &+ A'_{door,NW} \times \nu_{C,NW} \times \eta_{C,door,NW} \\
+    &+ A'_{door,NE} \times \nu_{C,NE} \times \eta_{C,door,NE} \\
+    &+ A'_{door,SE} \times \nu_{C,SE} \times \eta_{C,door,SE} \\
+    &+ A'_{wnd,SW} \times \nu_{C,SW} \times \eta_{C,wnd,SW} \\
+    &+ A'_{wnd,NW} \times \nu_{C,NW} \times \eta_{C,wnd,NW} \\
+    &+ A'_{wnd,NE} \times \nu_{C,NE} \times \eta_{C,wnd,NE} \\
+    &+ A'_{wnd,SE} \times \nu_{C,SE} \times \eta_{C,wnd,SE} \\
+    &+ ( A'_{base,SW} \times \nu_{C,SW} + A'_{base,NW} \times \nu_{C,NW} + A'_{base,NE} \times \nu_{C,NE} + A'_{base,SE} \times \nu_{C,SE} ) \times \eta_{C,base} \\
+    &+ ( A'_{base,d,SW} \times \nu_{C,SW} + A'_{base,d,NW} \times \nu_{C,NW} + A'_{base,d,NE} \times \nu_{C,NE} + A'_{base,d,SE} \times \nu_{C,SE} ) \times \eta_{C,base,d}
+\end{split}
+\tag{11b}
+\end{equation}
+]
+
+ifndef::official[====]
+endif::JJJ[]
+
+// JJJ コード
+ifndef::ees[]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
+
+latexmath:[
+\begin{equation}
+\begin{split}
+m_C &= A'_{roof} \times \nu_{C,top} \times \eta_{C,roof} \\
+    &+ ( A'_{wall,0} \times \nu_{C,0} + A'_{wall,90} \times \nu_{C,90} + A'_{wall,180} \times \nu_{C,180} + A'_{wall,270} \times \nu_{C,270} ) \times \eta_{C,wall} \\
+    &+ A'_{door,0} \times \nu_{C,0} \times \eta_{C,door,0} \\
+    &+ A'_{door,90} \times \nu_{C,90} \times \eta_{C,door,90} \\
+    &+ A'_{door,180} \times \nu_{C,180} \times \eta_{C,door,180} \\
+    &+ A'_{door,270} \times \nu_{C,270} \times \eta_{C,door,270} \\
+    &+ A'_{wnd,0} \times \nu_{C,0} \times \eta_{C,wnd,0} \\
+    &+ A'_{wnd,90} \times \nu_{C,90} \times \eta_{C,wnd,90} \\
+    &+ A'_{wnd,180} \times \nu_{C,180} \times \eta_{C,wnd,180} \\
+    &+ A'_{wnd,270} \times \nu_{C,270} \times \eta_{C,wnd,270} \\
+    &+ ( A'_{base,0} \times \nu_{C,0} + A'_{base,90} \times \nu_{C,90} + A'_{base,180} \times \nu_{C,180} + A'_{base,270} \times \nu_{C,270} ) \times \eta_{C,base} \\
+    &+ ( A'_{base,d,0} \times \nu_{C,0} + A'_{base,d,90} \times \nu_{C,90} + A'_{base,d,180} \times \nu_{C,180} + A'_{base,d,270} \times \nu_{C,270} ) \times \eta_{C,base,d}
+\end{split}
+\tag{iib}
+\end{equation}
+]
+
+ifndef::official[====]
+endif::ees[]
+
+// ees コード
+ifndef::JJJ[]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
+
+ここで、
+
+[horizontal]
+latexmath:[m_H]:: :単位日射強度当たりの暖房期の日射熱取得量 (W/(W/m^2^))
+latexmath:[m_C]:: :単位日射強度当たりの冷房期の日射熱取得量 (W/(W/m^2^))
+latexmath:[A'_{env}]:: :標準住戸における外皮の部位の面積の合計 (m^2^)
+latexmath:[A'_{roof}]:: :標準住戸における屋根又は天井の面積 (m^2^)
+latexmath:[A'_{wall,SW}]:: :標準住戸における南西に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,NW}]:: :標準住戸における北西に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,NE}]:: :標準住戸における北東に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,SE}]:: :標準住戸における南東に面した壁の面積 (m^2^)
+latexmath:[A'_{door,SW}]:: :標準住戸における南西に面したドアの面積 (m^2^)
+latexmath:[A'_{door,NW}]:: :標準住戸における北西に面したドアの面積 (m^2^)
+latexmath:[A'_{door,NE}]:: :標準住戸における北東に面したドアの面積 (m^2^)
+latexmath:[A'_{door,SE}]:: :標準住戸における南東に面したドアの面積 (m^2^)
+latexmath:[A'_{wnd,SW}]:: :標準住戸における南西に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,NW}]:: :標準住戸における北西に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,NE}]:: :標準住戸における北東に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,SE}]:: :標準住戸における南東に面した窓の面積 (m^2^)
+latexmath:[A'_{base,SW}]:: :標準住戸における南西に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,NW}]:: :標準住戸における北西に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,NE}]:: :標準住戸における北東に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,SE}]:: :標準住戸における南東に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,d,SW}]:: :標準住戸における南西に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,NW}]:: :標準住戸における北西に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,NE}]:: :標準住戸における北東に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,SE}]:: :標準住戸における南東に面した玄関等の基礎の面積 (m^2^)
+latexmath:[\nu_{H,top}]:: :上面に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,SW}]:: :南西に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,NW}]:: :北西に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,NE}]:: :北東に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,SE}]:: :南東に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{C,top}]:: :上面に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,SW}]:: :南西に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,NW}]:: :北西に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,NE}]:: :北東に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,SE}]:: :南東に面した外皮の部位の冷房期の方位係数
+latexmath:[\eta_{H,roof}]:: :屋根又は天井の暖房期の日射熱取得率
+latexmath:[\eta_{H,wall}]:: :壁の暖房期の日射熱取得率
+latexmath:[\eta_{H,door,SW}]:: :南西に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,door,NW}]:: :北西に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,door,NE}]:: :北東に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,door,SE}]:: :南東に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,SW}]:: :南西に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,NW}]:: :北西に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,NE}]:: :北東に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,SE}]:: :南東に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,base}]:: :玄関等を除く基礎の暖房期の日射熱取得率
+latexmath:[\eta_{H,base,d}]:: :玄関等の基礎の暖房期の日射熱取得率
+latexmath:[\eta_{C,roof}]:: :屋根又は天井の冷房期の日射熱取得率
+latexmath:[\eta_{C,wall}]:: :壁の冷房期の日射熱取得率
+latexmath:[\eta_{C,door,SW}]:: :南西に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,door,NW}]:: :北西に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,door,NE}]:: :北東に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,door,SE}]:: :南東に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,SW}]:: :南西に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,NW}]:: :北西に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,NE}]:: :北東に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,SE}]:: :南東に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,base}]:: :玄関等を除く基礎の冷房期の日射熱取得率
+latexmath:[\eta_{C,base,d}]:: :玄関等の基礎の冷房期の日射熱取得率
+
+である。
+
+ifndef::official[====]
+endif::jjj[]
+
+// JJJ コード
+ifndef::ees[]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
+
+ここで、
+
+[horizontal]
+latexmath:[m_H]:: :単位日射強度当たりの暖房期の日射熱取得量 (W/(W/m^2^))
+latexmath:[m_C]:: :単位日射強度当たりの冷房期の日射熱取得量 (W/(W/m^2^))
+latexmath:[A'_{env}]:: :標準住戸における外皮の部位の面積の合計 (m^2^)
+latexmath:[A'_{roof}]:: :標準住戸における屋根又は天井の面積 (m^2^)
+latexmath:[A'_{wall,0}]:: :標準住戸における主開口方位から0°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,90}]:: :標準住戸における主開口方位から90°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,180}]:: :標準住戸における主開口方位から180°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{wall,270}]:: :標準住戸における主開口方位から270°の方向に面した壁の面積 (m^2^)
+latexmath:[A'_{door,0}]:: :標準住戸における主開口方位から0°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{door,90}]:: :標準住戸における主開口方位から90°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{door,180}]:: :標準住戸における主開口方位から180°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{door,270}]:: :標準住戸における主開口方位から270°の方向に面したドアの面積 (m^2^)
+latexmath:[A'_{wnd,0}]:: :標準住戸における主開口方位から0°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,90}]:: :標準住戸における主開口方位から90°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,180}]:: :標準住戸における主開口方位から180°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{wnd,270}]:: :標準住戸における主開口方位から270°の方向に面した窓の面積 (m^2^)
+latexmath:[A'_{base,0}]:: :標準住戸における主開口方位から0°の方向に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,90}]:: :標準住戸における主開口方位から90°の方向に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,180}]:: :標準住戸における主開口方位から180°の方向に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,270}]:: :標準住戸における主開口方位から270°の方向に面した玄関等を除く基礎の面積 (m^2^)
+latexmath:[A'_{base,d,0}]:: :標準住戸における主開口方位から0°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,90}]:: :標準住戸における主開口方位から90°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,180}]:: :標準住戸における主開口方位から180°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[A'_{base,d,270}]:: :標準住戸における主開口方位から270°の方向に面した玄関等の基礎の面積 (m^2^)
+latexmath:[\nu_{H,top}]:: :上面に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,0}]:: :主開口方位から0°の方向に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,90}]:: :主開口方位から90°の方向に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,180}]:: :主開口方位から180°の方向に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{H,270}]:: :主開口方位から270°の方向に面した外皮の部位の暖房期の方位係数
+latexmath:[\nu_{C,top}]:: :上面に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,0}]:: :主開口方位から0°の方向に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,90}]:: :主開口方位から90°の方向に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,180}]:: :主開口方位から180°の方向に面した外皮の部位の冷房期の方位係数
+latexmath:[\nu_{C,270}]:: :主開口方位から270°の方向に面した外皮の部位の冷房期の方位係数
+latexmath:[\eta_{H,roof}]:: :屋根又は天井の暖房期の日射熱取得率
+latexmath:[\eta_{H,wall}]:: :壁の暖房期の日射熱取得率
+latexmath:[\eta_{H,door,0}]:: :主開口方位から0°の方向に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,door,90}]:: :主開口方位から90°の方向に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,door,180}]:: :主開口方位から180°の方向に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,door,270}]:: :主開口方位から270°の方向に面したドアの暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,0}]:: :主開口方位から0°の方向に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,90}]:: :主開口方位から90°の方向に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,180}]:: :主開口方位から180°の方向に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,wnd,270}]:: :主開口方位から270°の方向に面した窓の暖房期の日射熱取得率
+latexmath:[\eta_{H,base}]:: :玄関等を除く基礎の暖房期の日射熱取得率
+latexmath:[\eta_{H,base,d}]:: :玄関等の基礎の暖房期の日射熱取得率
+latexmath:[\eta_{C,roof}]:: :屋根又は天井の冷房期の日射熱取得率
+latexmath:[\eta_{C,wall}]:: :壁の冷房期の日射熱取得率
+latexmath:[\eta_{C,door,0}]:: :主開口方位から0°の方向に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,door,90}]:: :主開口方位から90°の方向に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,door,180}]:: :主開口方位から180°の方向に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,door,270}]:: :主開口方位から270°の方向に面したドアの冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,0}]:: :主開口方位から0°の方向に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,90}]:: :主開口方位から90°の方向に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,180}]:: :主開口方位から180°の方向に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,wnd,270}]:: :主開口方位から270°の方向に面した窓の冷房期の日射熱取得率
+latexmath:[\eta_{C,base}]:: :玄関等を除く基礎の冷房期の日射熱取得率
+latexmath:[\eta_{C,base,d}]:: :玄関等の基礎の冷房期の日射熱取得率
+
+である。
+
+ifndef::official[====]
+endif::ees[]
+
+===== 9.4 床面積の合計に対する外皮の部位の面積の合計の比
+
+NOTE: 9.4 全文 省略
+
+===== 9.5 標準住戸における外皮の部位の面積及び土間床等の外周部の長さ等
+
+NOTE: 9.5 本文のみ 省略
+
+// ees コード
+ifndef::JJJ[]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
+
+[caption="表3 "]
+.標準住戸における部位の面積及び長さ等
+[cols="4,1,1,1,1"]
+|====
+.2+| .2+^.^| 記号 .2+^.^| 単位	2+^a| 標準住戸における +
+部位の面積及び土間床等の +
+外周部の長さ等
+
+^a| (い) +
+床断熱住戸 +
+の場合^※^
+
+^a| (ろ) +
+基礎断熱住戸 +
+の場合
+
+| 外皮の部位の面積の合計 ^| latexmath:[A'_{env}] ^| m^2^ ^| latexmath:[266.10] ^| latexmath:[275.69]
+| 床面積の合計 ^| latexmath:[A'_A] ^| m^2^ 2+^| latexmath:[90.0]
+| 屋根又は天井の面積 ^| latexmath:[A'_{roof}] ^| m^2^ 2+^| latexmath:[50.85]
+| 南西に面した壁の面積 ^| latexmath:[A'_{wall,SW}] ^| m^2^ 2+^| latexmath:[30.47]
+| 北西に面した壁の面積 ^| latexmath:[A'_{wall,NW}] ^| m^2^ 2+^| latexmath:[22.37]
+| 北東に面した壁の面積 ^| latexmath:[A'_{wall,NE}] ^| m^2^ 2+^| latexmath:[47.92]
+| 南東に面した壁の面積 ^| latexmath:[A'_{wall,SE}] ^| m^2^ 2+^| latexmath:[22.28]
+| 南西に面したドアの面積 ^| latexmath:[A'_{door,SW}] ^| m^2^ 2+^| latexmath:[0.0]
+| 北西に面したドアの面積 ^| latexmath:[A'_{door,NW}] ^| m^2^ 2+^| latexmath:[1.89]
+| 北東に面したドアの面積 ^| latexmath:[A'_{door,NE}] ^| m^2^ 2+^| latexmath:[1.62]
+| 南東に面したドアの面積 ^| latexmath:[A'_{door,SE}] ^| m^2^ 2+^| latexmath:[0.0]
+| 南西に面した窓の面積 ^| latexmath:[A'_{wnd,SW}] ^| m^2^ 2+^| latexmath:[22.69]
+| 北西に面した窓の面積 ^| latexmath:[A'_{wnd,NW}] ^| m^2^ 2+^| latexmath:[2.38]
+| 北東に面した窓の面積 ^| latexmath:[A'_{wnd,NE}] ^| m^2^ 2+^| latexmath:[3.63]
+| 南東に面した窓の面積 ^| latexmath:[A'_{wnd,SE}] ^| m^2^ 2+^| latexmath:[4.37]
+| 床断熱した床の面積 ^| latexmath:[A'_{IF}] ^| m^2^ ^| latexmath:[45.05] ^| latexmath:[0.00]
+| 南西に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,SW}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[5.30]
+| 北西に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,NW}] ^| m^2^ ^| latexmath:[0.91] ^| latexmath:[1.48]
+| 北東に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,NE}] ^| m^2^ ^| latexmath:[0.91] ^| latexmath:[4.62]
+| 南東に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,SE}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[2.40]
+| 床下に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,IS}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[0.00]
+| 南西に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,SW}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 北西に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,NW}] ^| m^2^ ^| latexmath:[0.33] ^| latexmath:[0.33]
+| 北東に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,NE}] ^| m^2^ ^| latexmath:[0.25] ^| latexmath:[0.25]
+| 南東に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,SE}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 床下に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,IS}] ^| m^2^ ^| latexmath:[0.57] ^| latexmath:[0.00]
+| 南西に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,SW}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[10.61]
+| 北西に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,NW}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[2.97]
+| 北東に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,NE}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[9.24]
+| 南東に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,SE}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[4.79]
+| 床下に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,IS}] ^| m^2^ ^| latexmath:[3.64] ^| latexmath:[0.00]
+| 南西に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,SW}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 北西に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,NW}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[1.82]
+| 北東に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,NE}] ^| m^2^ ^| latexmath:[1.37] ^| latexmath:[1.37]
+| 南東に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,SE}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 床下に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,IS}] ^| m^2^ ^| latexmath:[3.19] ^| latexmath:[0.00]
+
+5+a|※ただし、「断熱構造とする部位がすべて床であることの」の判断において、以下の土間床部分は除くことができる。 +
+・玄関、勝手口その他これらに類する部分における土間床部分 +
+・断熱措置がとられている浴室下部における土間床部分
+
+|====
+
+ifndef::official[====]
+endif::JJJ[]
+
+// JJJ コード
+ifndef::ees[]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
+
+[caption="表i "]
+.標準住戸における部位の面積及び長さ等
+[cols="4,1,1,1,1"]
+|====
+.2+| .2+^.^| 記号 .2+^.^| 単位	2+^a| 標準住戸における +
+部位の面積及び土間床等の +
+外周部の長さ等
+
+^a| (い) +
+床断熱住戸 +
+の場合^※^
+
+^a| (ろ) +
+基礎断熱住戸 +
+の場合
+
+| 外皮の部位の面積の合計 ^| latexmath:[A'_{env}] ^| m^2^ ^| latexmath:[266.10] ^| latexmath:[275.69]
+| 床面積の合計 ^| latexmath:[A'_A] ^| m^2^ 2+^| latexmath:[90.0]
+| 屋根又は天井の面積 ^| latexmath:[A'_{roof}] ^| m^2^ 2+^| latexmath:[50.85]
+| 主開口方位から0°の方向に面した壁の面積 ^| latexmath:[A'_{wall,0}] ^| m^2^ 2+^| latexmath:[30.47]
+| 主開口方位から90°の方向に面した壁の面積 ^| latexmath:[A'_{wall,90}] ^| m^2^ 2+^| latexmath:[22.37]
+| 主開口方位から180°の方向に面した壁の面積 ^| latexmath:[A'_{wall,180}] ^| m^2^ 2+^| latexmath:[47.92]
+| 主開口方位から270°の方向に面した壁の面積 ^| latexmath:[A'_{wall,270}] ^| m^2^ 2+^| latexmath:[22.28]
+| 主開口方位から0°の方向に面したドアの面積 ^| latexmath:[A'_{door,0}] ^| m^2^ 2+^| latexmath:[0.0]
+| 主開口方位から90°の方向に面したドアの面積 ^| latexmath:[A'_{door,90}] ^| m^2^ 2+^| latexmath:[1.89]
+| 主開口方位から180°の方向に面したドアの面積 ^| latexmath:[A'_{door,180}] ^| m^2^ 2+^| latexmath:[1.62]
+| 主開口方位から270°の方向に面したドアの面積 ^| latexmath:[A'_{door,270}] ^| m^2^ 2+^| latexmath:[0.0]
+| 主開口方位から0°の方向に面した窓の面積 ^| latexmath:[A'_{wnd,0}] ^| m^2^ 2+^| latexmath:[22.69]
+| 主開口方位から90°の方向に面した窓の面積 ^| latexmath:[A'_{wnd,90}] ^| m^2^ 2+^| latexmath:[2.38]
+| 主開口方位から180°の方向に面した窓の面積 ^| latexmath:[A'_{wnd,180}] ^| m^2^ 2+^| latexmath:[3.63]
+| 主開口方位から270°の方向に面した窓の面積 ^| latexmath:[A'_{wnd,270}] ^| m^2^ 2+^| latexmath:[4.37]
+| 床断熱した床の面積 ^| latexmath:[A'_{IF}] ^| m^2^ ^| latexmath:[45.05] ^| latexmath:[0.00]
+| 主開口方位から0°の方向に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,0}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[5.30]
+| 主開口方位から90°の方向に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,90}] ^| m^2^ ^| latexmath:[0.91] ^| latexmath:[1.48]
+| 主開口方位から180°の方向に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,180}] ^| m^2^ ^| latexmath:[0.91] ^| latexmath:[4.62]
+| 主開口方位から270°の方向に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,270}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[2.40]
+| 床下に面した玄関等を除く基礎の面積 ^| latexmath:[A'_{base,IS}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[0.00]
+| 主開口方位から0°の方向に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,0}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 主開口方位から90°の方向に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,90}] ^| m^2^ ^| latexmath:[0.33] ^| latexmath:[0.33]
+| 主開口方位から180°の方向に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,180}] ^| m^2^ ^| latexmath:[0.25] ^| latexmath:[0.25]
+| 主開口方位から270°の方向に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,270}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 床下に面した玄関等の基礎の面積 ^| latexmath:[A'_{base,d,IS}] ^| m^2^ ^| latexmath:[0.57] ^| latexmath:[0.00]
+| 主開口方位から0°の方向に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,0}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[10.61]
+| 主開口方位から90°の方向に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,90}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[2.97]
+| 主開口方位から180°の方向に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,180}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[9.24]
+| 主開口方位から270°の方向に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,270}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[4.79]
+| 床下に面した玄関等を除く土間床等の外周部の長さ ^| latexmath:[L'_{prm,IS}] ^| m^2^ ^| latexmath:[3.64] ^| latexmath:[0.00]
+| 主開口方位から0°の方向に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,0}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 主開口方位から90°の方向に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,90}] ^| m^2^ ^| latexmath:[1.82] ^| latexmath:[1.82]
+| 主開口方位から180°の方向に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,180}] ^| m^2^ ^| latexmath:[1.37] ^| latexmath:[1.37]
+| 主開口方位から270°の方向に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,270}] ^| m^2^ ^| latexmath:[0.00] ^| latexmath:[0.00]
+| 床下に面した玄関等の土間床等の外周部の長さ ^| latexmath:[L'_{prm,d,IS}] ^| m^2^ ^| latexmath:[3.19] ^| latexmath:[0.00]
+
+5+a|※ただし、「断熱構造とする部位がすべて床であることの」の判断において、以下の土間床部分は除くことができる。 +
+・玄関、勝手口その他これらに類する部分における土間床部分 +
+・断熱措置がとられている浴室下部における土間床部分
+
+|====
+
+ifndef::official[====]
+endif::ees[]
+
+===== 9.6 外皮の部位及び土間床等の周辺部の温度差係数
+
+NOTE: 9.6 全文 省略
+
+===== 9.7 外皮の部位の方位係数
+
+NOTE: 9.7 全文 省略
+
+===== 9.8 外皮の部位の熱貫流率及び土間床等の周辺部の線熱貫流率
+
+NOTE: 9.8 全文 省略
+
+===== 9.9 外皮の部位の日射熱取得率
+
+NOTE: 9.9 全文 省略
+
+<<<
+
+include::03_HCLoad_02_EnvelopePerformance_App_A.adoc[]
+
+<<<
+
+include::03_HCLoad_02_EnvelopePerformance_App_B.adoc[]
+
+<<<
+
+include::03_HCLoad_02_EnvelopePerformance_App_C.adoc[]
