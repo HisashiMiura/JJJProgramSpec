@@ -846,3 +846,7 @@ latexmath:[A_{NO,R}]:: :標準住戸の非居室の床面積 (m^2^)
 ^| 11 ^| 2Fホール ^| latexmath:[10.77]
 ^| 12 ^| 2F便所 ^| latexmath:[1.66]
 |====
+
+<<<
+
+include::03_HCLoad_01_General_App_B.adoc[]
