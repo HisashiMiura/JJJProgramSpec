@@ -1,0 +1,49 @@
+# appveyor.yml
+install:
+  - set PATH=C:\Ruby22\bin;%PATH%
+  - bundle install
+
+build: off
+
+before_test:
+  - ruby -v
+  - gem -v
+  - bundle -v
+
+test_script:
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% index.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% spec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\CalculationSpec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\eesCalculationSpec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\JJJCalculationSpec.adoc --trace
+  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% spec.adoc --trace
+  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\CalculationSpec.adoc --trace
+  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\eesCalculationSpec.adoc --trace
+  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\JJJCalculationSpec.adoc --trace
+  - mkdir dist
+  - mkdir dist\images
+  - mkdir dist\CalculationSpec
+  - copy index.html dist\index.html
+  - copy spec.html dist\spec.html
+  - copy spec.pdf dist\spec.pdf
+  - copy CalculationSpec\CalculationSpec.html dist\CalculationSpec\CalculationSpec.html
+  - copy CalculationSpec\eesCalculationSpec.html dist\CalculationSpec\eesCalculationSpec.html
+  - copy CalculationSpec\JJJCalculationSpec.html dist\CalculationSpec\JJJCalculationSpec.html
+  - copy CalculationSpec\CalculationSpec.pdf dist\CalculationSpec.pdf
+  - copy CalculationSpec\eesCalculationSpec.pdf dist\eesCalculationSpec.pdf
+  - copy CalculationSpec\JJJCalculationSpec.pdf dist\JJJCalculationSpec.pdf
+  - xcopy images dist\images\ /s /e
+
+artifacts:
+- path: dist
+  name: document
+
+deploy:
+- provider: FTP
+  host: waws-prod-hk1-001.ftp.azurewebsites.windows.net
+  protocol: ftps
+  username: jjjdoc\jjjdoc
+  password:
+    secure: G3QJ5qkuXlj46an5IH1+5A==
+  folder: site\wwwroot
+  application: document

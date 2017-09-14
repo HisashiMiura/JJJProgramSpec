@@ -1,0 +1,24 @@
+# 仕様
+{commit-id}
+:toc: left
+:toclevels: 4
+:toc-title: 目次
+:pagenums:
+:sectnums:
+:figurenums:
+:figure-caption: 図
+:table-caption: 表
+:note-caption: メモ
+:warning-caption: 注意
+
+== HTML版
+. link:spec.html[インタフェイス仕様書]
+. link:CalculationSpec/CalculationSpec.html[計算仕様書]
+. link:CalculationSpec/eesCalculationSpec.html[計算仕様書(EES)]
+. link:CalculationSpec/JJJCalculationSpec.html[計算仕様書(JJJ)]
+
+== PDF版
+. link:spec.pdf[インタフェイス仕様書]
+. link:CalculationSpec.pdf[計算仕様書]
+. link:eesCalculationSpec.pdf[計算仕様書(EES)]
+. link:JJJCalculationSpec.pdf[計算仕様書(JJJ)]

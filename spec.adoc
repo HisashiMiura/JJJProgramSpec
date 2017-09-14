@@ -1,6 +1,6 @@
 = インタフェース仕様書
 {docdatetime}
-:doctype: article
+:doctype: book
 :toc: left
 :toc-title: 目次
 :pagenums:

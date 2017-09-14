@@ -1,9 +1,4 @@
-ifndef::ees,JJJ[]
 = エネルギー消費性能の計算方法(省エネ基準＆自立)
-endif::ees,JJJ[]
-
-{docdatetime}
-
 :doctype: article
 :toc: left
 :toc-title: 目次
@@ -16,14 +11,4 @@ endif::ees,JJJ[]
 :appendix-caption: 付録
 :stem: latexmath
 
-include::03_HCLoad_01_General.adoc[]
-
-<<<
-
-include::03_HCLoad_02_EnvelopePerformance.adoc[]
-
-<<<
-
-include::09_PV.adoc[]
-
-<<<
+include::CalculationSpecIncludes.adoc[]
