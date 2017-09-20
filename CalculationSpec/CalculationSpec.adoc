@@ -10,5 +10,6 @@
 :warning-caption: 注意
 :appendix-caption: 付録
 :stem: latexmath
+:lang: ja
 
 include::CalculationSpecIncludes.adoc[]

@@ -11,7 +11,7 @@
 :note-caption: メモ
 :warning-caption: 注意
 :appendix-caption: 付録
-:stem: asciimath
+:stem: latexmath
 :lang: ja
 
 include::spec_general.adoc[]

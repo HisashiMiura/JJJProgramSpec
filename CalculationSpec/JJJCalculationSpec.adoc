@@ -10,6 +10,7 @@
 :warning-caption: 注意
 :appendix-caption: 付録
 :stem: latexmath
+:lang: ja
 
 // 省エネ基準用の出力の場合は :ees: 自立循環用の出力の場合は :JJJ:
 :JJJ:
