@@ -5,12 +5,8 @@ install:
   - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
   - copy fonts\ipa\ipag.ttc C:\Windows\Fonts\
   - copy fonts\ipa\ipam.ttc C:\Windows\Fonts\
-  - ps: Set objShell = CreateObject("Shell.Application")
-  - ps: Set objFolder = objShell.Namespace("C:\Windows\Font")
-  - ps: Set objFolderItem = objFolder.ParseName("IPAMincho.ttf")
-  - ps: objFolderItem.InvokeVerb("Install")
-  - ps: Set objFolderItem = objFolder.ParseName("IPAGothic.ttf")
-  - ps: objFolderItem.InvokeVerb("Install")
+  - ps: $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
+  - ps: Get-ChildItem -Recurse -include *.ttc | % { $fonts.CopyHere($_.fullname) }
 
 build: off
 
