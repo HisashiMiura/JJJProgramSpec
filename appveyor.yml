@@ -2,6 +2,8 @@
 install:
   - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
+  - choco install gradle
+  - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
 
 build: off
 
@@ -10,7 +12,6 @@ before_test:
   - gem -v
   - bundle -v
   - java -version
-  - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
 
 test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% index.adoc --trace
