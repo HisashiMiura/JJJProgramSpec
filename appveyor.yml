@@ -9,6 +9,8 @@ before_test:
   - ruby -v
   - gem -v
   - bundle -v
+  - java -version
+  - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
 
 test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% index.adoc --trace
@@ -16,10 +18,14 @@ test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\CalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\JJJCalculationSpec.adoc --trace
-  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% spec.adoc --trace
-  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\CalculationSpec.adoc --trace
-  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\eesCalculationSpec.adoc --trace
-  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\JJJCalculationSpec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook spec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\CalculationSpec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\eesCalculationSpec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\JJJCalculationSpec.adoc --trace
+  - asciidoctor-fopub\fopub spec.xml
+  - asciidoctor-fopub\fopub CalculationSpec\CalculationSpec.xml
+  - asciidoctor-fopub\fopub CalculationSpec\eesCalculationSpec.xml
+  - asciidoctor-fopub\fopub CalculationSpec\JJJCalculationSpec.xml
   - mkdir dist
   - mkdir dist\images
   - mkdir dist\CalculationSpec
