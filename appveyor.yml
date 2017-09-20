@@ -26,11 +26,11 @@ test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\JJJCalculationSpec.adoc --trace
   - cd asciidoctor-fopub
-  - fopub ..\spec.xml
-  - fopub ..\spec.xml
-  - fopub ..\CalculationSpec\CalculationSpec.xml
-  - fopub ..\CalculationSpec\eesCalculationSpec.xml
-  - fopub ..\CalculationSpec\JJJCalculationSpec.xml
+  - fopub ..\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
+  - fopub ..\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
+  - fopub ..\CalculationSpec\CalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
+  - fopub ..\CalculationSpec\eesCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
+  - fopub ..\CalculationSpec\JJJCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - cd ..
   - mkdir dist
   - mkdir dist\images
