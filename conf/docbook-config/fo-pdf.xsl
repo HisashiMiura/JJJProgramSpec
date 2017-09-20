@@ -25,6 +25,7 @@
     <xsl:import href="callouts.xsl"/>
     
     <xsl:param name="DistroTitle"></xsl:param>
+    <xsl:param name="VERSION"></xsl:param>
 
     <!-- Enable extensions for FOP version 0.90 and later -->
     <xsl:param name="fop1.extensions">1</xsl:param>
