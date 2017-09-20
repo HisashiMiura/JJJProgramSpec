@@ -2,7 +2,6 @@
 install:
   - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
-  - choco install gradle
   - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
 
 build: off
@@ -23,6 +22,7 @@ test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\CalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\JJJCalculationSpec.adoc --trace
+  - cd asciidoctor-fopub && fopub && cd ..
   - asciidoctor-fopub\fopub spec.xml
   - asciidoctor-fopub\fopub CalculationSpec\CalculationSpec.xml
   - asciidoctor-fopub\fopub CalculationSpec\eesCalculationSpec.xml
