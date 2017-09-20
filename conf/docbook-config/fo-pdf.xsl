@@ -360,8 +360,8 @@
       Page layout
     -->
 
-    <xsl:param name="page.height.portrait">24cm</xsl:param>
-    <xsl:param name="page.width.portrait">16.5cm</xsl:param>
+    <xsl:param name="page.height.portrait">29.7cm</xsl:param>
+    <xsl:param name="page.width.portrait">21.0cm</xsl:param>
 
     <xsl:param name="page.margin.top">1.25cm</xsl:param>
     <xsl:param name="body.margin.top">1cm</xsl:param>
