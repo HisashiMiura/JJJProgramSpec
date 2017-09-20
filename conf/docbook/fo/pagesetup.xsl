@@ -2764,9 +2764,11 @@
         <xsl:if test="$pageclass != 'titlepage'">
           <xsl:choose>
             <xsl:when test="ancestor::book and ($double.sided != 0)">
+              <!--
               <fo:retrieve-marker retrieve-class-name="section.head.marker"
                                   retrieve-position="first-including-carryover"
                                   retrieve-boundary="page-sequence"/>
+              -->
             </xsl:when>
             <xsl:otherwise>
               <xsl:apply-templates select="." mode="titleabbrev.markup"/>
@@ -3101,6 +3103,11 @@
 
       <xsl:when test="$double.sided != 0 and ($sequence = 'odd' or $sequence = 'first')
                       and $position='right'">
+        <fo:inline padding-end="5mm">
+        <fo:retrieve-marker retrieve-class-name="section.head.marker"
+                          retrieve-position="first-including-carryover"
+                          retrieve-boundary="page-sequence"/>
+		</fo:inline>
         <fo:page-number/>
       </xsl:when>
 
