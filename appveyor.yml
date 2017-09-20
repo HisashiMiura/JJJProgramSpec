@@ -3,10 +3,9 @@ install:
   - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
   - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
-  - copy fonts\ipa\ipag.ttc C:\Windows\Fonts\
-  - copy fonts\ipa\ipam.ttc C:\Windows\Fonts\
-  - ps: $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
-  - ps: Get-ChildItem -Recurse -include *.ttc | % { $fonts.CopyHere($_.fullname) }
+  - ps: $path = "$pwd\fonts"
+  - ps: $shell = New-Object -ComObject Shell.Application
+  - ps: $shell.Namespace($path).Items().InvokeVerbEx("Install")
 
 build: off
 
