@@ -8,6 +8,7 @@
                 xmlns:db="http://docbook.org/ns/docbook"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
                 exclude-result-prefixes="db">
+                
     <!--
       The absolute URL imports point to system-wide locations by way of this /etc/xml/catalog entry:
 
@@ -23,16 +24,21 @@
     <xsl:import href="highlight.xsl"/>
     <xsl:import href="callouts.xsl"/>
 
+	<xsl:param name="header.rule" select="0"></xsl:param>
+	<xsl:param name="footer.rule" select="0"></xsl:param>
+	<xsl:param name="draft.mode">no</xsl:param>
+	<xsl:param name="marker.section.level">2</xsl:param>
+
     <!-- Enable extensions for FOP version 0.90 and later -->
     <xsl:param name="fop1.extensions">1</xsl:param>
 
     <xsl:attribute-set name="header.content.properties">
-        <xsl:attribute name="font-family">Sans-serif,Arial</xsl:attribute>
+        <xsl:attribute name="font-family">IPAPGothic</xsl:attribute>
         <xsl:attribute name="font-size">8pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="footer.content.properties">
-        <xsl:attribute name="font-family">Sans-serif,Arial</xsl:attribute>
+        <xsl:attribute name="font-family">IPAPGothic</xsl:attribute>
         <xsl:attribute name="font-size">8pt</xsl:attribute>
     </xsl:attribute-set>
 
@@ -59,15 +65,15 @@
     -->
 
     <xsl:template name="pickfont-sans">
-        <xsl:text>Meiryo,Sans-serif,Arial,Arial Unicode MS,Helvetica,serif,Georgia,Times New Roman</xsl:text>
+        <xsl:text>IPAPMincho</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-serif">
-        <xsl:text>Meiryo,Sans-serif,Arial,Arial Unicode MS,Helvetica,serif,Georgia,Times New Roman</xsl:text>
+        <xsl:text>IPAPGothic</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-mono">
-        <xsl:text>Meiryo,Liberation Mono,Lucida Console,Monaco,Consolas,Courier New,Courier,monospace,Arial Unicode MS,Lucida Sans Unicode</xsl:text>
+        <xsl:text>IPAPGothic</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-dingbat">
@@ -75,11 +81,11 @@
     </xsl:template>
 
     <xsl:template name="pickfont-symbol">
-        <xsl:text>Meiryo,Symbol,ZapfDingbats</xsl:text>
+        <xsl:text>IPAPGothic</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-math">
-        <xsl:text>Meiryo,Liberation Serif,Sans-serif,serif,Times-Roman</xsl:text>
+        <xsl:text>IPAPGothic</xsl:text>
     </xsl:template>
 
     <!--
@@ -101,7 +107,6 @@
         <xsl:call-template name="pickfont-mono"/>
     </xsl:param>
 
-    <!--
     <xsl:param name="dingbat.font.family">
       <xsl:call-template name="pickfont-dingbat"/>
     </xsl:param>
@@ -109,7 +114,6 @@
     <xsl:param name="symbol.font.family">
       <xsl:call-template name="pickfont-symbol"/>
     </xsl:param>
-    -->
 
     <xsl:param name="title.font.family">
         <xsl:call-template name="pickfont-serif"/>
@@ -353,8 +357,8 @@
       Page layout
     -->
 
-    <xsl:param name="page.height.portrait">24cm</xsl:param>
-    <xsl:param name="page.width.portrait">16.5cm</xsl:param>
+    <xsl:param name="page.height.portrait">29.7cm</xsl:param>
+    <xsl:param name="page.width.portrait">21.0cm</xsl:param>
 
     <xsl:param name="page.margin.top">1.25cm</xsl:param>
     <xsl:param name="body.margin.top">1cm</xsl:param>
