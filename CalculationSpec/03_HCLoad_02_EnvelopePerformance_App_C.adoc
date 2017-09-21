@@ -2,7 +2,119 @@
 
 ==== 付録C 方位係数
 
-外皮の部位の暖房期の方位係数は表1に定める値とする。外皮の部位の冷房期の方位係数は、表2に定める値とする。外皮の部位の方位は、当該部位の屋外に向かう法線の水平投影線の方位を、それぞれ北、北東、東、南東、南、南西、西、北西の各方位（真北方向を基準とした直交方位軸を設定し、その直交方位軸と±22.5度で交わる線により区分される範囲）と、上面、下面に振り分けた値とする。
+// ees
+ifndef::JJJ[]
+ifndef::official[]
+[caption=]
+.ees
+====
+endif::official[]
+
+外皮の部位の暖房期の方位係数は表1に定める値とする。外皮の部位の冷房期の方位係数は、表2に定める値とする。
+
+ifndef::official[====]
+endif::JJJ[]
+
+// JJJ
+ifndef::ees[]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
+
+外皮の部位の方位係数は、式(i)により表される。
+
+latexmath:[
+\begin{equation}
+\nu_{H,i} = \nu_{H,i,opn} \times c_{\nu,H,i}
+\tag{ia}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+\nu_{C,i} = \nu_{C,i,opn} \times c_{\nu,C,i}
+\tag{ib}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[\nu_{H,i}]:: :方位 latexmath:[i] に面した暖房期の方位係数
+latexmath:[\nu_{H,i,opn}]:: :方位 latexmath:[i] に面した暖房期の隣棟を考慮しない方位係数
+latexmath:[c_{\nu,H,i}]:: :方位 latexmath:[i] に面した暖房期の隣棟を考慮した方位係数の低減係数
+latexmath:[\nu_{C,i}]:: :方位 latexmath:[i] に面した冷房期の方位係数
+latexmath:[\nu_{C,i,opn}]:: :方位 latexmath:[i] に面した冷房期の隣棟を考慮しない方位係数
+latexmath:[c_{\nu,C,i}]:: :方位 latexmath:[i] に面した冷房期の隣棟を考慮した方位係数の低減係数
+
+である。
+
+方位 latexmath:[i] に面した暖房期の隣棟を考慮した方位係数の低減係数 latexmath:[c_{\nu,H,i}] 及び方位 latexmath:[i] に面した冷房期の隣棟を考慮しない方位係数 latexmath:[c_{\nu,C,i}] は、隣棟の影響を考慮しない場合はともに暖房期・冷房期ともに latexmath:[1.0] とし、隣棟の影響を考慮する場合は式(ii)により表される。
+
+latexmath:[
+\begin{equation}
+c_{\nu,H,i} =　\frac{ 1 }{ ( 1 + 1 / ( a_H \cdot d^2 + b_H \cdot d ) ) }
+\tag{iia}
+\end{equation}
+]
+
+latexmath:[
+\begin{equation}
+c_{\nu,C,i} =　\frac{ 1 }{ ( 1 + 1 / ( a_C \cdot d^2 + b_C \cdot d ) ) }
+\tag{iib}
+\end{equation}
+]
+
+ここで、
+
+[horizontal]
+latexmath:[d]:: :隣棟との距離 (m)
+
+である。式中の係数 latexmath:[a_H] , latexmath:[b_H] , latexmath:[a_C] , latexmath:[b_C] は表Iにより定義される。
+
+[caption=表I]
+.式(iia)及び式(iib)注の係数
+|====
+.2+^.^| 方位 2+^| 暖房期 2+^| 冷房期
+^| 係数a ^| 係数b ^| 係数a ^| 係数b
+^| 南   ^| 0.0436 ^| 0.0000 ^| 0.0307 ^| 0.1933
+^| 南西 ^| 0.0368 ^| 0.0156 ^| 0.0464 ^| 0.0583
+^| 西   ^| 0.0295 ^| 0.0528 ^| 0.0255 ^| 0.0747
+^| 北西 ^| 0.0286 ^| 0.1035 ^| 0.0249 ^| 0.0947
+^| 北   ^| 0.0297 ^| 0.1168 ^| 0.0153 ^| 0.1371
+^| 北東 ^| 0.0284 ^| 0.1055 ^| 0.0250 ^| 0.0972
+^| 東   ^| 0.0302 ^| 0.0490 ^| 0.0259 ^| 0.0773
+^| 南東 ^| 0.0361 ^| 0.0138 ^| 0.0456 ^| 0.0625
+|====
+
+隣棟との距離 latexmath:[d] は、グロス建蔽率 latexmath:[r_{bc}] から式(iii)により表される。
+
+latexmath:[
+\begin{equation}
+d = 67.1 \cdot \exp ^ { ( -6.05 \cdot r_{bc}) }
+\tag{iii}
+\end{equation}
+]
+
+グロス建蔽率 latexmath:[r_{bc}] は、 立地に応じて表IIに定める値とする。
+
+[caption=表II]
+.グロス建蔽率
+|====
+^| 立地 ^| 値
+| 立地1 : 密集している市街地 ^| 0.25
+| 立地2 : 密集していない市街地 ^| 0.35
+| 立地3 : 郊外 ^| 0.5
+|====
+
+方位 latexmath:[i] に面した暖房期の隣棟を考慮しない方位係数 latexmath:[\nu_{H,i,opn}] 及び方位 latexmath:[i] に面した冷房期の隣棟を考慮しない方位係数 latexmath:[\nu_{C,i,opn}] はそれぞれ表1及び表2に定める値とする。
+
+ifndef::official[====]
+endif::ees[]
+
+外皮の部位の方位は、当該部位の屋外に向かう法線の水平投影線の方位を、それぞれ北、北東、東、南東、南、南西、西、北西の各方位（真北方向を基準とした直交方位軸を設定し、その直交方位軸と±22.5度で交わる線により区分される範囲）と、上面、下面に振り分けた値とする。
 
 屋根の面する方位については、勾配の有無に関わらず上面に面するものとして取扱うこととする。
 
@@ -43,3 +155,16 @@
 | 北西 | 0.411 | 0.428 | 0.447 | 0.401 | 0.442 | 0.427 | 0.406 | 0.411
 | 下面 8+| 0.0
 |====
+
+// JJJ
+ifndef::ees[]
+ifndef::official[]
+[caption=]
+.JJJ
+====
+endif::official[]
+
+NOTE: 表1及び表2のタイトルは、「暖房期の方位係数」「冷房期の方位係数」であるが、それぞれ「暖房期の隣棟を考慮しない方位係数」「冷房期の隣棟を考慮しない方位係数」と読み替える。
+
+ifndef::official[====]
+endif::ees[]
