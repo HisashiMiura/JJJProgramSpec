@@ -19,7 +19,7 @@
 
 ## 蓄熱の利用
 1. [インターフェース仕様書](InterfaceSpec/spec_thermal_storage.adoc)
-1. 関連する計算方法仕様書
+1. 関連する計算方法仕様書  
 [第3章 暖冷房負荷と外皮性能 第1章 全般](CalculationSpec/03_HCLoad_01_General.adoc)
 [第3章 暖冷房負荷と外皮性能 第1章 全般 付録B](CalculationSpec/03_HCLoad_01_General_App_B.adoc)
 
@@ -31,21 +31,21 @@
 
 ## 断熱外皮計画
 1. [インターフェース仕様書](InterfaceSpec/spec_thermal_insulation.adoc)
-1. 関連する計算方法仕様書
-[第3章 暖冷房負荷と外皮性能 第2章 外皮性能](03_HCLoad_02_EnvelopePerformance.adoc)
-[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録B](03_HCLoad_02_EnvelopePerformance_App_B.adoc)
-[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録C](03_HCLoad_02_EnvelopePerformance_App_C.adoc)
+1. 関連する計算方法仕様書  
+[第3章 暖冷房負荷と外皮性能 第2章 外皮性能](03_HCLoad_02_EnvelopePerformance.adoc)  
+[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録B](03_HCLoad_02_EnvelopePerformance_App_B.adoc)  
+[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録C](03_HCLoad_02_EnvelopePerformance_App_C.adoc)  
 
 
 ## 日射熱制御(日射遮蔽・日射熱の利用)
 1. [インターフェース仕様書](InterfaceSpec/spec_solar_shade_and_gain.adoc)
-1. 関連する計算方法仕様書
-[第3章 暖冷房負荷と外皮性能 第2章 外皮性能](03_HCLoad_02_EnvelopePerformance.adoc)
-[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録B](03_HCLoad_02_EnvelopePerformance_App_B.adoc)
-[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録C](03_HCLoad_02_EnvelopePerformance_App_C.adoc)
-1. 根拠資料
-[隣棟を考慮した方位係数の低減係数の計算根拠と計算方法](bases/DistanceCoefficientDegradation.ipynb)
-[隣棟を考慮した方位係数の精緻解の結果(EP&B伊藤氏 報告書による)](bases/DistanceCoefficientDegradationData.csv)
+1. 関連する計算方法仕様書  
+[第3章 暖冷房負荷と外皮性能 第2章 外皮性能](03_HCLoad_02_EnvelopePerformance.adoc)  
+[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録B](03_HCLoad_02_EnvelopePerformance_App_B.adoc)  
+[第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録C](03_HCLoad_02_EnvelopePerformance_App_C.adoc)  
+1. 根拠資料  
+[隣棟を考慮した方位係数の低減係数の計算根拠と計算方法](bases/DistanceCoefficientDegradation.ipynb)  
+[隣棟を考慮した方位係数の精緻解の結果(EP&B伊藤氏 報告書による)](bases/DistanceCoefficientDegradationData.csv)v
 
 ## 断熱外皮計画　日射熱制御　共通
 1. [面積を入力しない方法におけるUA値とηA値の計算方法](JJJDetuchedHouseEnvelopeSimpleEvaluationMethod.ipynb)
