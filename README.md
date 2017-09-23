@@ -45,7 +45,7 @@
 [第3章 暖冷房負荷と外皮性能 第2章 外皮性能 付録C](03_HCLoad_02_EnvelopePerformance_App_C.adoc)  
 1. 根拠資料  
 [隣棟を考慮した方位係数の低減係数の計算根拠と計算方法](bases/DistanceCoefficientDegradation.ipynb)  
-[隣棟を考慮した方位係数の精緻解の結果(EP&B伊藤氏 報告書による)](bases/DistanceCoefficientDegradationData.csv)v
+[隣棟を考慮した方位係数の精緻解の結果(EP&B伊藤氏 報告書による)](bases/DistanceCoefficientDegradationData.csv)
 
 ## 断熱外皮計画　日射熱制御　共通
 1. [面積を入力しない方法におけるUA値とηA値の計算方法](JJJDetuchedHouseEnvelopeSimpleEvaluationMethod.ipynb)
