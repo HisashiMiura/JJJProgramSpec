@@ -26,7 +26,7 @@ test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\JJJCalculationSpec.adoc --trace
   - cd asciidoctor-fopub
-  - fopub ..\InterfaceSpec\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
+  - gradlew -q -u installApp
   - fopub ..\InterfaceSpec\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\CalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\eesCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl

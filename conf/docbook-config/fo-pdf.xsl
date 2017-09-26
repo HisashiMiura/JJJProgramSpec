@@ -36,12 +36,12 @@
     <xsl:param name="fop1.extensions">1</xsl:param>
 
     <xsl:attribute-set name="header.content.properties">
-        <xsl:attribute name="font-family">IPAPGothic</xsl:attribute>
+        <xsl:attribute name="font-family">IPAPGothic,Meiryo</xsl:attribute>
         <xsl:attribute name="font-size">8pt</xsl:attribute>
     </xsl:attribute-set>
 
     <xsl:attribute-set name="footer.content.properties">
-        <xsl:attribute name="font-family">IPAPGothic</xsl:attribute>
+        <xsl:attribute name="font-family">IPAPGothic,Meiryo</xsl:attribute>
         <xsl:attribute name="font-size">8pt</xsl:attribute>
     </xsl:attribute-set>
 
@@ -68,15 +68,15 @@
     -->
 
     <xsl:template name="pickfont-sans">
-        <xsl:text>IPAPMincho</xsl:text>
+        <xsl:text>IPAPMincho,Meiryo</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-serif">
-        <xsl:text>IPAPGothic</xsl:text>
+        <xsl:text>IPAPGothic,Meiryo</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-mono">
-        <xsl:text>IPAPGothic</xsl:text>
+        <xsl:text>IPAPGothic,Meiryo</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-dingbat">
@@ -84,11 +84,11 @@
     </xsl:template>
 
     <xsl:template name="pickfont-symbol">
-        <xsl:text>IPAPGothic</xsl:text>
+        <xsl:text>IPAPGothic,Meiryo</xsl:text>
     </xsl:template>
 
     <xsl:template name="pickfont-math">
-        <xsl:text>IPAPGothic</xsl:text>
+        <xsl:text>IPAPGothic,Meiryo</xsl:text>
     </xsl:template>
 
     <!--
