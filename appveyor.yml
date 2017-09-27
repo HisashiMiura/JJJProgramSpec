@@ -17,34 +17,35 @@ before_test:
 
 test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% index.adoc --trace
-  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% spec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% InterfaceSpec\spec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\CalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\JJJCalculationSpec.adoc --trace
-  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook spec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook InterfaceSpec\spec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\CalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\JJJCalculationSpec.adoc --trace
   - cd asciidoctor-fopub
-  - fopub ..\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
-  - fopub ..\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
+  - gradlew -q -u installApp
+  - fopub ..\InterfaceSpec\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\CalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\eesCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\JJJCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - cd ..
   - mkdir dist
-  - mkdir dist\images
+  - mkdir dist\InterfaceSpec
+  - mkdir dist\InterfaceSpec\images
   - mkdir dist\CalculationSpec
   - copy index.html dist\index.html
-  - copy spec.html dist\spec.html
-  - copy spec.pdf dist\spec.pdf
+  - copy InterfaceSpec\spec.html dist\InterfaceSpec\spec.html
+  - copy InterfaceSpec\spec.pdf dist\spec.pdf
   - copy CalculationSpec\CalculationSpec.html dist\CalculationSpec\CalculationSpec.html
   - copy CalculationSpec\eesCalculationSpec.html dist\CalculationSpec\eesCalculationSpec.html
   - copy CalculationSpec\JJJCalculationSpec.html dist\CalculationSpec\JJJCalculationSpec.html
   - copy CalculationSpec\CalculationSpec.pdf dist\CalculationSpec.pdf
   - copy CalculationSpec\eesCalculationSpec.pdf dist\eesCalculationSpec.pdf
   - copy CalculationSpec\JJJCalculationSpec.pdf dist\JJJCalculationSpec.pdf
-  - xcopy images dist\images\ /s /e
+  - xcopy InterfaceSpec\images dist\InterfaceSpec\images\ /s /e
 
 artifacts:
 - path: dist
@@ -54,8 +55,8 @@ deploy:
 - provider: FTP
   host: waws-prod-hk1-001.ftp.azurewebsites.windows.net
   protocol: ftps
-  username: jjjdoc\jjjdoc
+  username: jjjdoc\jjjdocftp
   password:
-    secure: G3QJ5qkuXlj46an5IH1+5A==
+    secure: NX1T0Egb4qpWrmZzagRHig==
   folder: site\wwwroot
   application: document
