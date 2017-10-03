@@ -21,24 +21,30 @@ test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\CalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\JJJCalculationSpec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% ifdef\ifdef.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook InterfaceSpec\spec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\CalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\JJJCalculationSpec.adoc --trace
+  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook ifdef\ifdef.adoc --trace
   - cd asciidoctor-fopub
   - gradlew -q -u installApp
   - fopub ..\InterfaceSpec\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\CalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\eesCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\JJJCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
+  - fopub ..\ifdef\ifdef.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - cd ..
   - mkdir dist
   - mkdir dist\InterfaceSpec
   - mkdir dist\InterfaceSpec\images
   - mkdir dist\CalculationSpec
+  - mkdir dist\ifdef
   - copy index.html dist\index.html
   - copy InterfaceSpec\spec.html dist\InterfaceSpec\spec.html
   - copy InterfaceSpec\spec.pdf dist\spec.pdf
+  - copy ifdef\ifdef.html dist\ifdef\ifdef.html
+  - copy ifdef\ifdef.pdf dist\ifdef.pdf
   - copy CalculationSpec\CalculationSpec.html dist\CalculationSpec\CalculationSpec.html
   - copy CalculationSpec\eesCalculationSpec.html dist\CalculationSpec\eesCalculationSpec.html
   - copy CalculationSpec\JJJCalculationSpec.html dist\CalculationSpec\JJJCalculationSpec.html
