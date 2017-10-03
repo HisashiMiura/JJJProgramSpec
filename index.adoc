@@ -13,12 +13,14 @@
 
 == HTML版
 . link:spec.html[インタフェイス仕様書]
+. link:ifdef/ifdef.html[インタフェイス定義表]
 . link:CalculationSpec/CalculationSpec.html[計算仕様書]
 . link:CalculationSpec/eesCalculationSpec.html[計算仕様書(EES)]
 . link:CalculationSpec/JJJCalculationSpec.html[計算仕様書(JJJ)]
 
 == PDF版
 . link:spec.pdf[インタフェイス仕様書]
+. link:ifdef.pdf[インタフェイス定義表]
 . link:CalculationSpec.pdf[計算仕様書]
 . link:eesCalculationSpec.pdf[計算仕様書(EES)]
 . link:JJJCalculationSpec.pdf[計算仕様書(JJJ)]
