@@ -16,7 +16,7 @@
 
 NOTE: <<GL_anual_solar_revision>> の内容を埋め込み
 
-=== 4. 入力
+=== 入力
 
 [[PV_number_of_panels]]
 ==== 太陽光発電の採用とパネルの枚数
