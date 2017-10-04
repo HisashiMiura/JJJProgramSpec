@@ -33,7 +33,6 @@ test_script:
   - fopub ..\CalculationSpec\CalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\eesCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\JJJCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
-  - fopub ..\ifdef\ifdef.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - cd ..
   - mkdir dist
   - mkdir dist\InterfaceSpec
