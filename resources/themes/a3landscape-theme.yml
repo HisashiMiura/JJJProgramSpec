@@ -1,0 +1,31 @@
+font:
+  catalog:
+    migmix:
+      normal: migmix-1p/migmix-1p-regular.ttf
+      bold: migmix-1p/migmix-1p-bold.ttf
+      italic: migmix-1p/migmix-1p-regular.ttf
+      bold_italic: migmix-1p/migmix-1p-bold.ttf
+  fallbacks:
+    - migmix
+page:
+  background_color: ffffff
+  layout: landscape
+  margin: [15mm, 15mm, 15mm, 15mm]
+  size: A3
+base:
+  font_size: 9
+  font_color: 000000
+  font_family: migmix
+
+footer:
+  font_size: 9
+  font_color: $base_font_color
+  border_color: dddddd
+  border_width: 0.25
+  height: 25mm
+  padding: [3mm,0,0,0]
+  valign: top
+  recto_content:
+    center: '{page-number} / {page-count}'
+  verso_content:
+    center: '{page-number} / {page-count}'
