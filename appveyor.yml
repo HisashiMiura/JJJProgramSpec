@@ -3,7 +3,7 @@ install:
   - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
   - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
-  - ps: $path = "$pwd\fonts"
+  - ps: $path = "$pwd\resources\fonts"
   - ps: $shell = New-Object -ComObject Shell.Application
   - ps: $shell.Namespace($path).Items().InvokeVerbEx("Install")
 
