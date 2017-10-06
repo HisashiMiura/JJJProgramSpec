@@ -145,7 +145,7 @@ image::images//HeatingSystem//danreibouhoushikitountenhouhounobunrui.png[]
 入力規則::
 最小値=1.00, 最大値=9.99, 小数点=2, 規定値=1.40
 
-[[CS_for_other_room]]
+[[CS_for_main_room]]
 ==== 主たる居室の冷房設備
 
 表示条件::
