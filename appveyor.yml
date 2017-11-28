@@ -3,7 +3,7 @@ install:
   - set PATH=C:\Ruby22\bin;%PATH%
   - bundle install
   - git clone --depth 1 https://github.com/asciidoctor/asciidoctor-fopub
-  - ps: $path = "$pwd\fonts"
+  - ps: $path = "$pwd\resources\fonts"
   - ps: $shell = New-Object -ComObject Shell.Application
   - ps: $shell.Namespace($path).Items().InvokeVerbEx("Install")
 
@@ -16,6 +16,7 @@ before_test:
   - java -version
 
 test_script:
+  - mkdir dist
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% index.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% InterfaceSpec\spec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% CalculationSpec\CalculationSpec.adoc --trace
@@ -26,16 +27,14 @@ test_script:
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\CalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\eesCalculationSpec.adoc --trace
   - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook CalculationSpec\JJJCalculationSpec.adoc --trace
-  - asciidoctor -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -b docbook ifdef\ifdef.adoc --trace
+  - asciidoctor-pdf -r asciidoctor-diagram -a commit-id=%APPVEYOR_REPO_COMMIT% -a pdf-stylesdir=resources/themes -a pdf-style=a3landscape -a pdf-fontsdir=resources/fonts ifdef\ifdef.adoc  -o dist\ifdef.pdf --trace
   - cd asciidoctor-fopub
   - gradlew -q -u installApp
   - fopub ..\InterfaceSpec\spec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\CalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\eesCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - fopub ..\CalculationSpec\JJJCalculationSpec.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
-  - fopub ..\ifdef\ifdef.xml -xsl ..\conf\docbook-config\fo-pdf.xsl
   - cd ..
-  - mkdir dist
   - mkdir dist\InterfaceSpec
   - mkdir dist\InterfaceSpec\images
   - mkdir dist\CalculationSpec
@@ -44,7 +43,6 @@ test_script:
   - copy InterfaceSpec\spec.html dist\InterfaceSpec\spec.html
   - copy InterfaceSpec\spec.pdf dist\spec.pdf
   - copy ifdef\ifdef.html dist\ifdef\ifdef.html
-  - copy ifdef\ifdef.pdf dist\ifdef.pdf
   - copy CalculationSpec\CalculationSpec.html dist\CalculationSpec\CalculationSpec.html
   - copy CalculationSpec\eesCalculationSpec.html dist\CalculationSpec\eesCalculationSpec.html
   - copy CalculationSpec\JJJCalculationSpec.html dist\CalculationSpec\JJJCalculationSpec.html
