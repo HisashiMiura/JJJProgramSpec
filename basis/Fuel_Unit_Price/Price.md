@@ -31,7 +31,7 @@ http://www.enecho.meti.go.jp/category/saving_and_new/saiene/kaitori/fit_kakaku.h
 http://e-com.tokyo-gas.co.jp/ryokin/Default.aspx?tik=1
 
 ## 灯油
-1,664円/ℓ（税込）
+1,664円/18ℓ（税込）
 民生用灯油（給油所以外）  
 公表　H30年1月31日  
 配達価格　全国平均	資源エネルギー庁  
